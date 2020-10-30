@@ -1,4 +1,4 @@
-# TablutCompetition
+# TablutAI
 Software for the Tablut Students Competition
 
 ## Installation on Ubuntu/Debian 

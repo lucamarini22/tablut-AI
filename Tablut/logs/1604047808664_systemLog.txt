@@ -1,0 +1,16 @@
+Oct 30, 2020 9:50:08 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Accensione server
+Oct 30, 2020 9:50:08 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Partita di Tablut
+Oct 30, 2020 9:50:08 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for white connection..
+Oct 30, 2020 9:54:29 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player connected
+Oct 30, 2020 9:54:29 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura nome player bianco in corso..
+Oct 30, 2020 9:54:29 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player name:	random
+Oct 30, 2020 9:54:29 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for Black connection..
+Oct 30, 2020 9:59:29 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+WARNING: Closing system for timeout!

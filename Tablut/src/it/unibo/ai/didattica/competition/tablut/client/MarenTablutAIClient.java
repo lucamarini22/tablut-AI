@@ -4,6 +4,7 @@ import it.unibo.ai.didattica.competition.tablut.domain.*;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Random;
 
 public class MarenTablutAIClient extends TablutClient {
 
@@ -21,8 +22,69 @@ public class MarenTablutAIClient extends TablutClient {
 
     @Override
     public void run() {
+        try {
+            this.declareName();
+        } catch (Exception ignored) {
+        }
 
-       
+        State state;
+        Game rules = null;
+        state = new StateTablut();
+        state.setTurn(State.Turn.WHITE);
+        rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
+        System.out.println("You are player " + this.getPlayer().toString() + "!");
+
+        while (true) {
+            try {
+                this.read();
+            } catch (ClassNotFoundException | IOException e1) {
+                System.exit(1);
+            }
+            state = this.getCurrentState();
+            System.out.println("Current state:");
+            System.out.println(state.toString());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ignored) {
+            }
+
+            if (this.getPlayer().equals(State.Turn.WHITE)) {
+                if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
+
+
+                } else if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
+                    System.out.println("Waiting for your opponent move... ");
+                } else if (state.getTurn().equals(StateTablut.Turn.WHITEWIN)) {
+                    System.out.println("YOU WIN!");
+                    System.exit(0);
+                } else if (state.getTurn().equals(StateTablut.Turn.BLACKWIN)) {
+                    System.out.println("YOU LOSE!");
+                    System.exit(0);
+                } else if (state.getTurn().equals(StateTablut.Turn.DRAW)) {
+                    System.out.println("DRAW!");
+                    System.exit(0);
+                }
+
+            } else {
+                if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
+                    
+
+                } else if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
+                    System.out.println("Waiting for your opponent move... ");
+                } else if (state.getTurn().equals(StateTablut.Turn.WHITEWIN)) {
+                    System.out.println("YOU LOSE!");
+                    System.exit(0);
+                } else if (state.getTurn().equals(StateTablut.Turn.BLACKWIN)) {
+                    System.out.println("YOU WIN!");
+                    System.exit(0);
+                } else if (state.getTurn().equals(StateTablut.Turn.DRAW)) {
+                    System.out.println("DRAW!");
+                    System.exit(0);
+                }
+
+            }
+        }
+
     }
 
     public static void main(String[] args) throws UnknownHostException, IOException, ClassNotFoundException {
@@ -49,4 +111,4 @@ public class MarenTablutAIClient extends TablutClient {
         client.run();
     }
 
-    }
+}

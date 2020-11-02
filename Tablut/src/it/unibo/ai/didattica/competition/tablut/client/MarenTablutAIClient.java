@@ -50,7 +50,7 @@ public class MarenTablutAIClient extends TablutClient {
 
             if (this.getPlayer().equals(State.Turn.WHITE)) {
                 if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
-
+                    // TO-DO
 
                 } else if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
                     System.out.println("Waiting for your opponent move... ");
@@ -67,7 +67,7 @@ public class MarenTablutAIClient extends TablutClient {
 
             } else {
                 if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
-                    
+                    // TO-DO
 
                 } else if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
                     System.out.println("Waiting for your opponent move... ");

@@ -1,10 +1,10 @@
-package it.unibo.ai.didattica.competition.tablut.client;
+package it.unibo.ai.didattica.competition.tablut.maren.client;
 
+import it.unibo.ai.didattica.competition.tablut.client.TablutClient;
 import it.unibo.ai.didattica.competition.tablut.domain.*;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.Random;
 
 public class MarenTablutAIClient extends TablutClient {
 
@@ -12,6 +12,10 @@ public class MarenTablutAIClient extends TablutClient {
     static private final int CACHE_SIZE = 0;
     static private final String LOGS_FOLDER = "garbage";
     static private final String W_B_NAME = "fake";
+
+    private final int depth = 4;
+
+    // private AlphaBetaSearch algorithm;
 
 
 
@@ -32,6 +36,7 @@ public class MarenTablutAIClient extends TablutClient {
         state = new StateTablut();
         state.setTurn(State.Turn.WHITE);
         rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
+        // algorithm = new AlphaBetaSearch(rules);
         System.out.println("You are player " + this.getPlayer().toString() + "!");
 
         while (true) {
@@ -51,6 +56,22 @@ public class MarenTablutAIClient extends TablutClient {
             if (this.getPlayer().equals(State.Turn.WHITE)) {
                 if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
                     // TO-DO
+                    /*
+                    Action a = null;
+                    Action a2 = this.algorithm.makeDecision(state);
+                    String from = state.getBox(a2.getRowFrom(), a2.getColumnFrom());
+                    String to = state.getBox(a2.getRowTo(), a2.getColumnTo());
+                    try {
+                        a = new Action(from, to, StateTablut.Turn.WHITE);
+                    } catch (IOException ignored) {
+                    }
+                    System.out.println("Mossa scelta: " + a.toString());
+                    try {
+                        this.write(a);
+                    } catch (ClassNotFoundException | IOException ignored) {
+                    }
+
+                     */
 
                 } else if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
                     System.out.println("Waiting for your opponent move... ");

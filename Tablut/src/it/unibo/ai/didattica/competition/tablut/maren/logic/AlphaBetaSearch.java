@@ -1,4 +1,4 @@
-package it.unibo.ai.didattica.competition.tablut.logic;
+package it.unibo.ai.didattica.competition.tablut.maren.logic;
 
 
 import aima.core.search.adversarial.AdversarialSearch;

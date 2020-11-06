@@ -1,0 +1,101 @@
+Nov 06, 2020 10:06:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Players:	random	vs	random
+Nov 06, 2020 10:06:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Repeated moves allowed:	0	Cache:	-1
+Nov 06, 2020 10:06:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Inizio partita
+Nov 06, 2020 10:06:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWWBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:06:12 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: W Pawn from g5 to g6
+Nov 06, 2020 10:06:12 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:06:12 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:06:12 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWOWOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+B
+Nov 06, 2020 10:06:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a4 to a2
+Nov 06, 2020 10:06:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:06:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 2
+Nov 06, 2020 10:06:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+BOOOBOOOO
+OOOOWOOOO
+OOOOWOOOB
+BBWWKWOBB
+BOOOWOWOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:06:16 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: W Pawn from e4 to b4
+Nov 06, 2020 10:06:16 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:06:16 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 3
+Nov 06, 2020 10:06:16 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+BOOOBOOOO
+OOOOWOOOO
+OWOOOOOOB
+BBWWKWOBB
+BOOOWOWOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+B
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i4 to e4
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackPawnUp
+FINE: Pedina bianca rimossa in: e3
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Capture! Draw cache cleared!
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:06:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+BOOOBOOOO
+OOOOOOOOO
+OWOOBOOOO
+BBWWKWOBB
+BOOOWOWOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:06:20 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: W Pawn from null to null

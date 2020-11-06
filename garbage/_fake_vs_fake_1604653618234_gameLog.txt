@@ -1,0 +1,1544 @@
+Nov 06, 2020 10:06:58 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Players:	fake	vs	fake
+Nov 06, 2020 10:06:58 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Repeated moves allowed:	99	Cache:	0
+Nov 06, 2020 10:06:58 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Inizio partita
+Nov 06, 2020 10:06:58 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+FINE: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWWBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+B
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i4 to f3
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from h5 to h3
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:02 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OWOOOOOBO
+BOOOWOOOB
+BBWWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to a2
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i4 to b4
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to c8
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from h3 to h4
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:06 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOO
+BOOOWOOBB
+BBWWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to d7
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to c9
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a4 to f8
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to i8
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from h4 to i7
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a4 to f3
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a5 to g2
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a4 to a2
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:10 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOWBBBOOO
+BOOOBOOOO
+OOOOOOOOO
+OOOOWOOBB
+BBWWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to h1
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from h4 to h5
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d1 to i1
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a5 to c7
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a5 to a3
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:14 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOWBBBOOO
+BOOOBOOOO
+BOOOOOOOO
+OOOOWOOBB
+OBOWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e1 to d6
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i4 to d4
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to b9
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to f3
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from h4 to f6
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to c8
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e1 to a4
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to g1
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to h3
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i4 to i3
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:18 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOOBBBOOO
+BOOOBOOOO
+BOWOOOOOB
+OOOOWOOBO
+OBOWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to b2
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d1 to g6
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d1 to c1
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:22 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OOBOBBOOO
+BOOOBOOOO
+BOOOOOOWB
+OOOOWOOOO
+OBOWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c1 to a1
+Nov 06, 2020 10:07:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+BOOOBBOOO
+BOOOBOOOO
+BOOOOOOWB
+OWOOOOOOO
+OBOWKWWOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to i8
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to c1
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to e6
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to e3
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to b2
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to d1
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to h9
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to h9
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to c4
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to b9
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to d4
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to h1
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to i8
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to g2
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+BOOOBBOOO
+BOOOOOBOO
+BOOOOOOWB
+OWOOOOOOO
+OBOWKWWOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to h5
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to a4
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to b6
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a2 to c2
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+BOOOBBOOO
+OOBOOOBOO
+BWOOOOOWB
+OOOOOOOOO
+OBOWKWWOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to c8
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to b8
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to c1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to a7
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to e6
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to d1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to c7
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to g3
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to g4
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to h8
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to d2
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to e6
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to d1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e1 to h1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to h2
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to b9
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to e4
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to h1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to h8
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to a4
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to f6
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to c3
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to e6
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a1 to b1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOBBOOO
+OOBOOOBOO
+BWOOOOOOB
+OOOOOOOWO
+OBOWKWWOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOOOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to b4
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to d6
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to d6
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to i8
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to g3
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to e3
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to e6
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to g3
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to g1
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to b2
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to g7
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to c3
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to g7
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to d2
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to g6
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to a8
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to g1
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to g9
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to a2
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to b9
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to f2
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b5 to b4
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:41 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOBBOOO
+OOBOOOBOO
+BWOOOOOOB
+OBOOOOOWO
+OOOWKWOOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to d3
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to d2
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to h5
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to a2
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to a5
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to i7
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to g3
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:45 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOBBOOO
+OOBOOOBOO
+BWOOOOBOO
+OBOOOWOWO
+OOOWKOOOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to a7
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to b5
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to h9
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to f2
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una citadel
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to f2
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to d8
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to a1
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to a8
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to a5
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to c4
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to g1
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to e3
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to c4
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e1 to e2
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:49 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOBOOO
+OOBOBOBOO
+BWOOOOBOO
+OBOOOOWWO
+OOOWKOOOB
+BOOOOOOWB
+OOOOWOOOO
+OOOOBOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to i8
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to f8
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to i1
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to a5
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to h1
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to b9
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to b7
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to b2
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to b8
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una citadel
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to g9
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to h8
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to h5
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to f3
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to d3
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to d6
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a6 to c6
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:53 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOBOOO
+OOBOBOBOO
+BWOOOOBOO
+OBOOOOWWO
+OOWOKOOOB
+OOBOOOOWB
+OOOOWOOOO
+OOOOBOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to h9
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to c1
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to a8
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to g5
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c6 to f7
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from f1 to g1
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:07:57 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+OOBOBOBOO
+BWOOOOBOO
+OBOOOOWWO
+OOWOKOOOB
+OOBOOOOWB
+OOOOOOWOO
+OOOOBOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to a7
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to i8
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to d6
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to h1
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to d6
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to d4
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to a2
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to h5
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to e1
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to h9
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to h5
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to a2
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to h5
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to e4
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to i7
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to f6
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to a1
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to e3
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to i2
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c6 to h5
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to i4
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to h5
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e8 to c8
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:01 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+OOBOBOBOO
+BWOOOOBOO
+OBOOOOWWO
+OOWOKOOOB
+OOBOOOOWB
+OOOWOOOOO
+OOBOOOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to b7
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to b9
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c8 to b5
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to f5
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to a8
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c6 to c4
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to f8
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to a8
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to b9
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una citadel
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to b8
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una citadel
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to g6
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to a8
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to h5
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to i1
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to g7
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c8 to g5
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i5 to i1
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:05 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOB
+OWBOBOBOO
+BOOOOOBOO
+OBOOOOWWO
+OOWOKOOOO
+OOBOOOOWB
+OOOWOOOOO
+OOBOOOWOO
+OOWBBBOOO
+-
+W
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to i3
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c6 to f4
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i1 to h7
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to g6
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to d2
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to h6
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c6 to h6
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:09 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOB
+OWBOBOBOO
+BOOOOOBOO
+OBOOOOWWO
+OOWOKOOOO
+OOOOOOOBB
+OOOWOOOOO
+OOBOOOWOO
+OOWBBBOWO
+-
+W
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to a7
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to a4
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d9 to d8
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:13 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOB
+OWBOBOBOO
+BOOOOOBOO
+OBOOOOWWO
+OOWOKOOOO
+OOOOOOOBB
+OOOOOOOOW
+OOBBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to d7
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to g5
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to a8
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to f7
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to b3
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c8 to b8
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:17 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOB
+OWBOBOBOO
+BOOOOOBOO
+OBOOOOOWO
+OOWOKOOOO
+OOOOOOOBB
+OOOOOOWOW
+OBOBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to b7
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to e4
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to d9
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to h5
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to g4
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to e3
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i1 to a5
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to c1
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to f3
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to e8
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to d7
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to g5
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to e3
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to e8
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to h6
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to f4
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to b9
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to b9
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to g9
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to g6
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i1 to i3
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:21 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+OWBOBOBOO
+BOOOOOBOB
+OBOOOOOWO
+OOWOKOOOO
+OOOOOOOOB
+OOOOOOWWO
+OBOBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to d6
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to e1
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to f6
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to b3
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to c8
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to f3
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to h6
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from c2 to d7
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to g9
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to f6
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to e1
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to f2
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to e8
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to f1
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to f5
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b4 to h1
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to c4
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to i7
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una citadel
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to b5
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to g5
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to b6
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i3 to i2
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:25 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+OWBOBOBOB
+BOOOOOBOO
+OBOWOOOOO
+OOWOKOOOO
+OOOOOOOOB
+OOOOOOWWO
+OBOBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to d7
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to g4
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to f1
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to d7
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to b7
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from a3 to a2
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackPawnRight
+FINE: Pedina bianca rimossa in: b2
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Capture! Draw cache cleared!
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:29 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+BOBOBOBOB
+OOWOOOBOO
+OBOWOOOOO
+OOOOKOOOO
+OOOOOOOOB
+OOOOOOWWO
+OBOBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to b2
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to c6
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to a9
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to h6
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to a9
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i6 to b6
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:33 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+BOBOBOBOB
+OOWOOOBOO
+OBOWOOOOO
+OOOOTOOOO
+OBOOOOOOO
+OOOOKOWWO
+OBOBOOWOO
+OOWOBBOWO
+-
+W
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b6 to d7
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b6 to i8
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to e3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to i6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i2 to b3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to d7
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to a3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to h6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to f5
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to d2
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to i3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to b9
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to e3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to d3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b6 to i7
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to b3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e9 to e1
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to e4
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b6 to a6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to a6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to a9
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b1 to i7
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i2 to a6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g3 to a9
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to d9
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to i4
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i2 to h5
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to f3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g1 to d1
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che arriva sopra una citadel
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from g2 to g4
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa che scavalca una pedina
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b8 to d3
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from d8 to h2
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from e2 to f6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from i2 to h6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+WARNING: Mossa in diagonale
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Turn: B Pawn from b6 to e6
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+FINE: Movimento pedina
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackKingDown
+FINE: Nero vince con re catturato in: e7
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Current draw cache size: 1
+Nov 06, 2020 10:08:37 AM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+FINE: Stato:
+OBOOOOBOO
+BOBOBOBOB
+OOWOOOBOO
+OOWWOOOOO
+OOOOTOOOO
+OOOOBOOOO
+OOOOKOWWO
+OBOBOOWOO
+OOOOBBOWO
+-
+BW

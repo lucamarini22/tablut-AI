@@ -39,6 +39,7 @@
     </target>
     <target name="randomblack">
         <java classname="it.unibo.ai.didattica.competition.tablut.client.TablutRandomBlackClient" fork="true">
+            <arg value="${gui}"/>
             <classpath>
                 <pathelement location="lib/gson-2.2.2.jar"/>
                 <pathelement location="build"/>

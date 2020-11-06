@@ -39,6 +39,12 @@ Run the server with:
 ant server
 ```
 
+To visualize the gui too, run the the server with the following command:
+```
+ant server -Dgui=-g
+```
+
+
 Check the behaviour using the random players in two different console windows:
 
 ```

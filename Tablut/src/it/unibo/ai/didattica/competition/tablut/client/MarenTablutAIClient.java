@@ -69,6 +69,16 @@ public class MarenTablutAIClient extends TablutClient {
                 if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
                     // TO-DO
 
+                    Action a = null;
+                    try {
+                        a = new Action("a4", "b4", State.Turn.BLACK);
+                    } catch (IOException ignored) {
+                    }
+                    try {
+                        this.write(a);
+                    } catch (ClassNotFoundException | IOException ignored) {
+                    }
+
                 } else if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
                     System.out.println("Waiting for your opponent move... ");
                 } else if (state.getTurn().equals(StateTablut.Turn.WHITEWIN)) {

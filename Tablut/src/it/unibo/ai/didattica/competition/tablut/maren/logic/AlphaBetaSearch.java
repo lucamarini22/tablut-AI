@@ -56,7 +56,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
      */
     public static <STATE, ACTION, PLAYER> AlphaBetaSearch<STATE, ACTION, PLAYER> createFor(
             Game<STATE, ACTION, PLAYER> game) {
-        return new AlphaBetaSearch<STATE, ACTION, PLAYER>(game);
+        return new AlphaBetaSearch<>(game);
     }
 
     public AlphaBetaSearch(Game<S, A, P> game) {

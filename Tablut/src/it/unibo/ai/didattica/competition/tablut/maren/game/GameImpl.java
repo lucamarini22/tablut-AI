@@ -1,17 +1,18 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
+import java.util.LinkedList;
 import java.util.List;
 import aima.core.search.adversarial.Game;
 import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 
-public class GameImpl implements Game<MyState, MyAction, State.Turn> {
+public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     private MyState myState;
 
-    public GameImpl() {
-        this.myState = new MyStateImpl();
+    public GameImpl(int depth) {
+        this.myState = new MyStateImpl(depth);
     }
 
     @Override
@@ -36,16 +37,22 @@ public class GameImpl implements Game<MyState, MyAction, State.Turn> {
 
     @Override
     public MyState getResult(MyState myState, MyAction action) {
-        return null;
+        return new MyStateImpl(4);
     }
 
     @Override
     public boolean isTerminal(MyState myState) {
-        return false;
+        return myState.getCurrentDepth() == 0;
     }
 
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
         return 0;
     }
+
+    public void setCurrentDepth(MyState myState, int depth) {
+         myState.setCurrentDepth(depth);
+    }
+
+
 }

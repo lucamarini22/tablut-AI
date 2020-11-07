@@ -5,6 +5,7 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class MyStateImpl implements MyState {
@@ -19,14 +20,21 @@ public class MyStateImpl implements MyState {
     private static final LinkedList<Integer> BLACK_EDGES_2 = new LinkedList<>(Arrays.asList(0, 8));
 
     private State.Turn turn;
-
+    private int currentDepth;
 
     State.Pawn[][] board;
 
-    public MyStateImpl() {
+    public MyStateImpl(int depth) {
         this.turn = State.Turn.WHITE;
         this.initializeBoard();
+        this.setCurrentDepth(depth);
+
     }
+
+    public void setCurrentDepth(int currentDepth) {
+        this.currentDepth = currentDepth;
+    }
+
 
 
     @Override
@@ -35,10 +43,18 @@ public class MyStateImpl implements MyState {
     }
 
     @Override
-    public LinkedList<MyAction> getPossibleActions() {
-        MyAction a = new MyActionImpl(); //("3e", "3f", this.getTurn());
-        MyAction b = new MyActionImpl(); //("4e", "4f", this.getTurn());
-        return new LinkedList<MyAction>(Arrays.asList(a, b));
+    public List<MyAction> getPossibleActions() {
+        List l = new LinkedList<>();
+        MyAction a = new MyActionImpl("e3", "f3", this.getTurn());
+        MyAction b = new MyActionImpl("e4", "f4", this.getTurn());
+        l.add(a);
+        l.add(b);
+        return l;
+    }
+
+    @Override
+    public int getCurrentDepth() {
+        return this.currentDepth;
     }
 
     private void setBoardCell(int row, int col, State.Pawn p) {
@@ -104,7 +120,6 @@ public class MyStateImpl implements MyState {
         this.board[5][8] = State.Pawn.BLACK;
         this.board[4][7] = State.Pawn.BLACK;*/
     }
-
 
 
 

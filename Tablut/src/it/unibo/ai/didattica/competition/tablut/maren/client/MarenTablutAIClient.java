@@ -2,9 +2,7 @@ package it.unibo.ai.didattica.competition.tablut.maren.client;
 
 import it.unibo.ai.didattica.competition.tablut.client.TablutClient;
 import it.unibo.ai.didattica.competition.tablut.domain.*;
-import it.unibo.ai.didattica.competition.tablut.maren.game.GameImpl;
-import it.unibo.ai.didattica.competition.tablut.maren.game.MyState;
-import it.unibo.ai.didattica.competition.tablut.maren.game.MyStateImpl;
+import it.unibo.ai.didattica.competition.tablut.maren.game.*;
 import it.unibo.ai.didattica.competition.tablut.maren.logic.AlphaBetaSearch;
 
 import java.io.IOException;
@@ -17,15 +15,15 @@ public class MarenTablutAIClient extends TablutClient {
     static private final String LOGS_FOLDER = "garbage";
     static private final String W_B_NAME = "fake";
 
-    private final int depth = 4;
+    private static final int DEPTH = 4;
 
-    private final AlphaBetaSearch<MyState, Action, State.Turn> alphaBetaSearch;
+    private final AlphaBetaSearch<MyState, MyAction, State.Turn> alphaBetaSearch;
 
 
     public MarenTablutAIClient(String player, String name, int timeout, String ipAddress) throws UnknownHostException, IOException {
         super(player, name, timeout, ipAddress);
-        aima.core.search.adversarial.Game game = new GameImpl();
-        this.alphaBetaSearch = new AlphaBetaSearch<MyState, Action, State.Turn>(game);
+        MyGame<MyState, MyAction, State.Turn> game = new GameImpl(4);
+        this.alphaBetaSearch = new AlphaBetaSearch<MyState, MyAction, State.Turn>(game, DEPTH);
     }
 
     @Override
@@ -50,7 +48,7 @@ public class MarenTablutAIClient extends TablutClient {
                 System.exit(1);
             }
             state = this.getCurrentState();
-            MyState myState = new MyStateImpl();
+            MyState myState = new MyStateImpl(DEPTH);
             System.out.println("Current state:");
             System.out.println(state.toString());
             try {
@@ -63,7 +61,7 @@ public class MarenTablutAIClient extends TablutClient {
                     // TO-DO
 
                     Action a = null;
-                    Action a2 = this.alphaBetaSearch.makeDecision(myState);
+                    MyAction a2 = this.alphaBetaSearch.makeDecision(myState);
                     String from = state.getBox(a2.getRowFrom(), a2.getColumnFrom());
                     String to = state.getBox(a2.getRowTo(), a2.getColumnTo());
                     try {

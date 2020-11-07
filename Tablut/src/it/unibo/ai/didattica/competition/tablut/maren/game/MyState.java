@@ -5,12 +5,19 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 
 public interface MyState {
 
     State.Turn getTurn();
 
-    LinkedList<MyAction> getPossibleActions();
+    List<MyAction> getPossibleActions();
+
+    int getCurrentDepth();
+
+    void setCurrentDepth(int currentDepth);
+
+
 
 
 }

@@ -2,6 +2,10 @@ package it.unibo.ai.didattica.competition.tablut.maren.client;
 
 import it.unibo.ai.didattica.competition.tablut.client.TablutClient;
 import it.unibo.ai.didattica.competition.tablut.domain.*;
+import it.unibo.ai.didattica.competition.tablut.maren.game.GameImpl;
+import it.unibo.ai.didattica.competition.tablut.maren.game.MyState;
+import it.unibo.ai.didattica.competition.tablut.maren.game.MyStateImpl;
+import it.unibo.ai.didattica.competition.tablut.maren.logic.AlphaBetaSearch;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -15,13 +19,13 @@ public class MarenTablutAIClient extends TablutClient {
 
     private final int depth = 4;
 
-    // private AlphaBetaSearch algorithm;
-
-
+    private final AlphaBetaSearch<MyState, Action, State.Turn> alphaBetaSearch;
 
 
     public MarenTablutAIClient(String player, String name, int timeout, String ipAddress) throws UnknownHostException, IOException {
         super(player, name, timeout, ipAddress);
+        aima.core.search.adversarial.Game game = new GameImpl();
+        this.alphaBetaSearch = new AlphaBetaSearch<MyState, Action, State.Turn>(game);
     }
 
     @Override
@@ -46,6 +50,7 @@ public class MarenTablutAIClient extends TablutClient {
                 System.exit(1);
             }
             state = this.getCurrentState();
+            MyState myState = new MyStateImpl();
             System.out.println("Current state:");
             System.out.println(state.toString());
             try {
@@ -56,9 +61,9 @@ public class MarenTablutAIClient extends TablutClient {
             if (this.getPlayer().equals(State.Turn.WHITE)) {
                 if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
                     // TO-DO
-                    /*
+
                     Action a = null;
-                    Action a2 = this.algorithm.makeDecision(state);
+                    Action a2 = this.alphaBetaSearch.makeDecision(myState);
                     String from = state.getBox(a2.getRowFrom(), a2.getColumnFrom());
                     String to = state.getBox(a2.getRowTo(), a2.getColumnTo());
                     try {
@@ -71,7 +76,7 @@ public class MarenTablutAIClient extends TablutClient {
                     } catch (ClassNotFoundException | IOException ignored) {
                     }
 
-                     */
+
 
                 } else if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
                     System.out.println("Waiting for your opponent move... ");

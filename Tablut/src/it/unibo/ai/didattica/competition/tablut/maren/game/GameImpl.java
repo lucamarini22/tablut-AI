@@ -6,17 +6,17 @@ import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 
-public class GameImpl implements Game<GameState, Action, State.Turn> {
+public class GameImpl implements Game<MyState, MyAction, State.Turn> {
 
-    private GameState gameState;
+    private MyState myState;
 
     public GameImpl() {
-        this.gameState = new GameStateImpl();
+        this.myState = new MyStateImpl();
     }
 
     @Override
-    public GameState getInitialState() {
-        return this.gameState;
+    public MyState getInitialState() {
+        return this.myState;
     }
 
     @Override
@@ -25,27 +25,27 @@ public class GameImpl implements Game<GameState, Action, State.Turn> {
     }
 
     @Override
-    public State.Turn getPlayer(GameState gameState) {
-        return gameState.getTurn();
+    public State.Turn getPlayer(MyState myState) {
+        return myState.getTurn();
     }
 
     @Override
-    public List<Action> getActions(GameState gameState) {
+    public List<MyAction> getActions(MyState myState) {
+        return myState.getPossibleActions();
+    }
+
+    @Override
+    public MyState getResult(MyState myState, MyAction action) {
         return null;
     }
 
     @Override
-    public GameState getResult(GameState gameState, Action action) {
-        return null;
-    }
-
-    @Override
-    public boolean isTerminal(GameState gameState) {
+    public boolean isTerminal(MyState myState) {
         return false;
     }
 
     @Override
-    public double getUtility(GameState gameState, State.Turn turn) {
+    public double getUtility(MyState myState, State.Turn turn) {
         return 0;
     }
 }

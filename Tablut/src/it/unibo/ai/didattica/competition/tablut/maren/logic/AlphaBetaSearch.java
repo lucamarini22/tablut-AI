@@ -69,10 +69,15 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
         A result = null;
         double resultValue = Double.NEGATIVE_INFINITY;
         P player = game.getPlayer(state);
+        System.out.println("AAA");
         for (A action : game.getActions(state)) {
+            System.out.println("BBB");
+
             double value = minValue(game.getResult(state, action), player,
                     Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
             if (value > resultValue) {
+                System.out.println("CCC");
+
                 result = action;
                 resultValue = value;
             }

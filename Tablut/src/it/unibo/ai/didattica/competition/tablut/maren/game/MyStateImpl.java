@@ -35,7 +35,7 @@ public class MyStateImpl implements MyState {
         this.currentDepth = currentDepth;
     }
 
-    void setBoard(State.Pawn[][] newBoard) {
+    private void setBoard(State.Pawn[][] newBoard) {
         this.board = newBoard;
     }
 

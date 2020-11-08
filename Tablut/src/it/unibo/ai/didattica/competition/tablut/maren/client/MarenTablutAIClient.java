@@ -40,6 +40,8 @@ public class MarenTablutAIClient extends TablutClient {
         rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
         // algorithm = new AlphaBetaSearch(rules);
         System.out.println("You are player " + this.getPlayer().toString() + "!");
+        MyState myState = new MyStateImpl(DEPTH);
+
 
         while (true) {
             try {
@@ -48,7 +50,7 @@ public class MarenTablutAIClient extends TablutClient {
                 System.exit(1);
             }
             state = this.getCurrentState();
-            MyState myState = new MyStateImpl(DEPTH);
+            myState.updateState(state);
             System.out.println("Current state:");
             System.out.println(state.toString());
             try {

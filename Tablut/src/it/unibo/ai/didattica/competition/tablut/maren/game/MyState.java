@@ -17,6 +17,8 @@ public interface MyState {
 
     void setCurrentDepth(int currentDepth);
 
+    void updateState(State currentState);
+
 
 
 

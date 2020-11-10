@@ -1,0 +1,34 @@
+Nov 09, 2020 10:20:32 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Accensione server
+Nov 09, 2020 10:20:32 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Partita di Tablut
+Nov 09, 2020 10:20:32 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for white connection..
+Nov 09, 2020 10:20:40 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player connected
+Nov 09, 2020 10:20:40 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura nome player bianco in corso..
+Nov 09, 2020 10:20:41 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player name:	random
+Nov 09, 2020 10:20:41 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for Black connection..
+Nov 09, 2020 10:20:44 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Accettata connessione con client giocatore Nero
+Nov 09, 2020 10:20:44 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura nome player nero in corso..
+Nov 09, 2020 10:20:44 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Black player name:	FailureStateBLACK
+Nov 09, 2020 10:20:46 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Invio messaggio ai giocatori
+Nov 09, 2020 10:20:46 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura mossa player W in corso..
+Nov 09, 2020 10:20:48 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Move received.	Turn: W Pawn from g5 to g9
+Nov 09, 2020 10:20:48 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Invio messaggio ai client
+Nov 09, 2020 10:20:48 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura mossa player B in corso..
+Nov 09, 2020 10:21:48 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+WARNING: Timeout! Player B lose!
+Nov 09, 2020 10:21:48 AM it.unibo.ai.didattica.competition.tablut.server.Server run
+WARNING: Chiusura sistema per timeout

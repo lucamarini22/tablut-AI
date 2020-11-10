@@ -1,16 +1,16 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import aima.core.util.datastructure.Pair;
-import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.stream.IntStream;
 
-public class MyStateImpl implements MyState {
+public class BoardImpl implements Board{
+
+
 
     private static final int WIDTH = 9;
     private static final int KING_X = 4;
@@ -31,6 +31,13 @@ public class MyStateImpl implements MyState {
     private static final LinkedList<Integer> ESCAPES_1 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> ESCAPES_2 = new LinkedList<>(Arrays.asList(1, 2, 6, 7));
 
+    private State.Pawn[][] board;
+    private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();
+
+
+    public BoardImpl() {
+        this.initializeBoard();
+    }
 
     private enum SquareType {
         CASTLE,
@@ -38,63 +45,8 @@ public class MyStateImpl implements MyState {
         ESCAPE
     }
 
-    private State.Turn turn;
-    private int currentDepth;
-    private final HashMap<Pair<Integer, Integer>, SquareType> specialSquares = new HashMap<>();
-
-    State.Pawn[][] board;
-
-    public MyStateImpl(int depth) {
-        this.turn = State.Turn.WHITE;
-        this.initializeBoard();
-        this.setCurrentDepth(depth);
-    }
-
-    public void setCurrentDepth(int currentDepth) {
-        this.currentDepth = currentDepth;
-    }
-
-    private void setBoard(State.Pawn[][] newBoard) {
-        this.board = newBoard;
-    }
-
-    @Override
-    public void updateState(State currentState) {
-        this.setBoard(currentState.getBoard());
-    }
 
 
-    @Override
-    public State.Turn getTurn() {
-        return this.turn;
-    }
-
-
-    private State.Pawn getBoardCell(int row, int col) {
-        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
-            return this.board[row][col];
-        }
-        return null;
-    }
-
-    @Override
-    public List<MyAction> getPossibleActions() {
-
-
-
-
-        List l = new LinkedList<>();
-        MyAction a = new MyActionImpl("e3", "f3", this.getTurn());
-        MyAction b = new MyActionImpl("e4", "f4", this.getTurn());
-        l.add(a);
-        l.add(b);
-        return l;
-    }
-
-    @Override
-    public int getCurrentDepth() {
-        return this.currentDepth;
-    }
 
     private void setBoardCell(int row, int col, State.Pawn p) {
         if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
@@ -125,27 +77,27 @@ public class MyStateImpl implements MyState {
         // Set escapes
         ESCAPES_1.forEach((e1) -> {
             ESCAPES_2.forEach((e2 -> {
-                this.specialSquares.put(new Pair<>(e1, e2), SquareType.ESCAPE);
-                this.specialSquares.put(new Pair<>(e2, e1), SquareType.ESCAPE);
+                this.specialSquares.put(new Pair<>(e1, e2), BoardImpl.SquareType.ESCAPE);
+                this.specialSquares.put(new Pair<>(e2, e1), BoardImpl.SquareType.ESCAPE);
             }));
         });
 
         // Set camps
         CAMP_EDGES_1.forEach((c_edge_1) ->
                 CAMP_EDGES_2.forEach((c_edge_2) -> {
-                    this.specialSquares.put(new Pair<>(c_edge_1, c_edge_2), SquareType.CAMP);
-                    this.specialSquares.put(new Pair<>(c_edge_2, c_edge_1), SquareType.CAMP);
+                    this.specialSquares.put(new Pair<>(c_edge_1, c_edge_2), BoardImpl.SquareType.CAMP);
+                    this.specialSquares.put(new Pair<>(c_edge_2, c_edge_1), BoardImpl.SquareType.CAMP);
                 }));
         INTERNAL_CAMP_1.forEach((i_c_1) -> {
-            this.specialSquares.put(new Pair<>(i_c_1, INTERNAL_CAMP_2), SquareType.CAMP);
-            this.specialSquares.put(new Pair<>(INTERNAL_CAMP_2, i_c_1), SquareType.CAMP);
+            this.specialSquares.put(new Pair<>(i_c_1, INTERNAL_CAMP_2), BoardImpl.SquareType.CAMP);
+            this.specialSquares.put(new Pair<>(INTERNAL_CAMP_2, i_c_1), BoardImpl.SquareType.CAMP);
         });
 
         // Set the castle
-        this.specialSquares.put(new Pair<>(KING_X, KING_Y), SquareType.CASTLE);
+        this.specialSquares.put(new Pair<>(KING_X, KING_Y), BoardImpl.SquareType.CASTLE);
     }
 
-    private void initializeBoard() {
+    public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 
         IntStream.range(0, WIDTH).forEach((row) -> {
@@ -187,6 +139,17 @@ public class MyStateImpl implements MyState {
         this.board[4][8] = State.Pawn.BLACK;
         this.board[5][8] = State.Pawn.BLACK;
         this.board[4][7] = State.Pawn.BLACK;*/
+    }
+
+    public State.Pawn getBoardCell(int row, int col) {
+        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
+            return this.board[row][col];
+        }
+        return null;
+    }
+
+    public void setBoard(State.Pawn[][] newBoard) {
+        this.board = newBoard;
     }
 
 

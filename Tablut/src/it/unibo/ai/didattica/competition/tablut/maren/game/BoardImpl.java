@@ -9,9 +9,6 @@ import java.util.LinkedList;
 import java.util.stream.IntStream;
 
 public class BoardImpl implements Board{
-
-
-
     private static final int WIDTH = 9;
     private static final int KING_X = 4;
     private static final int KING_Y = 4;
@@ -45,72 +42,20 @@ public class BoardImpl implements Board{
         ESCAPE
     }
 
-
-
-
-    private void setBoardCell(int row, int col, State.Pawn p) {
-        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
-            this.board[row][col] = p;
-        }
-    }
-
-    private void setWhitePositions() {
-        WHITE_POS.forEach((pos) -> {
-            this.setBoardCell(pos, NUM_OF_WHITES_PER_ROW, State.Pawn.WHITE);
-            this.setBoardCell(NUM_OF_WHITES_PER_ROW, pos, State.Pawn.WHITE);
-        });
-    }
-
-    private void setBlackPositions() {
-        BLACK_EDGES_1.forEach((b_edge_1) ->
-                BLACK_EDGES_2.forEach((b_edge_2) -> {
-                    this.setBoardCell(b_edge_1, b_edge_2, State.Pawn.BLACK);
-                    this.setBoardCell(b_edge_2, b_edge_1, State.Pawn.BLACK);
-                }));
-        INTERNAL_BLACK_1.forEach((i_b_1) -> {
-            this.setBoardCell(i_b_1, INTERNAL_BLACK_2, State.Pawn.BLACK);
-            this.setBoardCell(INTERNAL_BLACK_2, i_b_1, State.Pawn.BLACK);
-        });
-    }
-
-    private void setSpecialSquares() {
-        // Set escapes
-        ESCAPES_1.forEach((e1) -> {
-            ESCAPES_2.forEach((e2 -> {
-                this.specialSquares.put(new Pair<>(e1, e2), BoardImpl.SquareType.ESCAPE);
-                this.specialSquares.put(new Pair<>(e2, e1), BoardImpl.SquareType.ESCAPE);
-            }));
-        });
-
-        // Set camps
-        CAMP_EDGES_1.forEach((c_edge_1) ->
-                CAMP_EDGES_2.forEach((c_edge_2) -> {
-                    this.specialSquares.put(new Pair<>(c_edge_1, c_edge_2), BoardImpl.SquareType.CAMP);
-                    this.specialSquares.put(new Pair<>(c_edge_2, c_edge_1), BoardImpl.SquareType.CAMP);
-                }));
-        INTERNAL_CAMP_1.forEach((i_c_1) -> {
-            this.specialSquares.put(new Pair<>(i_c_1, INTERNAL_CAMP_2), BoardImpl.SquareType.CAMP);
-            this.specialSquares.put(new Pair<>(INTERNAL_CAMP_2, i_c_1), BoardImpl.SquareType.CAMP);
-        });
-
-        // Set the castle
-        this.specialSquares.put(new Pair<>(KING_X, KING_Y), BoardImpl.SquareType.CASTLE);
-    }
-
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 
         IntStream.range(0, WIDTH).forEach((row) -> {
             IntStream.range(0, WIDTH).forEach((col) -> {
-                this.setBoardCell(row, col, State.Pawn.EMPTY);
+                this.setCell(row, col, State.Pawn.EMPTY);
             });
         });
 
-        this.setBoardCell(KING_X, KING_Y, State.Pawn.THRONE);
+        this.setCell(KING_X, KING_Y, State.Pawn.THRONE);
 
         // this.turn = State.Turn.BLACK;
 
-        this.setBoardCell(KING_X, KING_Y, State.Pawn.KING);
+        this.setCell(KING_X, KING_Y, State.Pawn.KING);
         this.setWhitePositions();
         this.setBlackPositions();
         this.setSpecialSquares();
@@ -141,17 +86,63 @@ public class BoardImpl implements Board{
         this.board[4][7] = State.Pawn.BLACK;*/
     }
 
-    public State.Pawn getBoardCell(int row, int col) {
+    public State.Pawn getCell(int row, int col) {
         if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
             return this.board[row][col];
         }
         return null;
     }
 
+    public void setCell(int row, int col, State.Pawn p) {
+        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
+            this.board[row][col] = p;
+        }
+    }
+
     public void setBoard(State.Pawn[][] newBoard) {
         this.board = newBoard;
     }
 
+    private void setWhitePositions() {
+        WHITE_POS.forEach((pos) -> {
+            this.setCell(pos, NUM_OF_WHITES_PER_ROW, State.Pawn.WHITE);
+            this.setCell(NUM_OF_WHITES_PER_ROW, pos, State.Pawn.WHITE);
+        });
+    }
 
+    private void setBlackPositions() {
+        BLACK_EDGES_1.forEach((b_edge_1) ->
+                BLACK_EDGES_2.forEach((b_edge_2) -> {
+                    this.setCell(b_edge_1, b_edge_2, State.Pawn.BLACK);
+                    this.setCell(b_edge_2, b_edge_1, State.Pawn.BLACK);
+                }));
+        INTERNAL_BLACK_1.forEach((i_b_1) -> {
+            this.setCell(i_b_1, INTERNAL_BLACK_2, State.Pawn.BLACK);
+            this.setCell(INTERNAL_BLACK_2, i_b_1, State.Pawn.BLACK);
+        });
+    }
 
+    private void setSpecialSquares() {
+        // Set escapes
+        ESCAPES_1.forEach((e1) -> {
+            ESCAPES_2.forEach((e2 -> {
+                this.specialSquares.put(new Pair<>(e1, e2), BoardImpl.SquareType.ESCAPE);
+                this.specialSquares.put(new Pair<>(e2, e1), BoardImpl.SquareType.ESCAPE);
+            }));
+        });
+
+        // Set camps
+        CAMP_EDGES_1.forEach((c_edge_1) ->
+                CAMP_EDGES_2.forEach((c_edge_2) -> {
+                    this.specialSquares.put(new Pair<>(c_edge_1, c_edge_2), BoardImpl.SquareType.CAMP);
+                    this.specialSquares.put(new Pair<>(c_edge_2, c_edge_1), BoardImpl.SquareType.CAMP);
+                }));
+        INTERNAL_CAMP_1.forEach((i_c_1) -> {
+            this.specialSquares.put(new Pair<>(i_c_1, INTERNAL_CAMP_2), BoardImpl.SquareType.CAMP);
+            this.specialSquares.put(new Pair<>(INTERNAL_CAMP_2, i_c_1), BoardImpl.SquareType.CAMP);
+        });
+
+        // Set the castle
+        this.specialSquares.put(new Pair<>(KING_X, KING_Y), BoardImpl.SquareType.CASTLE);
+    }
 }

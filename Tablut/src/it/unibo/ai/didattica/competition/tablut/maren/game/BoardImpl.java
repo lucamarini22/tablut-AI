@@ -3,9 +3,7 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class BoardImpl implements Board{
@@ -30,6 +28,9 @@ public class BoardImpl implements Board{
 
     private State.Pawn[][] board;
     private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();
+    private final List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
+    private final List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
+
 
 
     public BoardImpl() {
@@ -87,14 +88,14 @@ public class BoardImpl implements Board{
     }
 
     public State.Pawn getCell(int row, int col) {
-        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
+        if (!(row < 0 || col < 0 || row > WIDTH - 1 || col > WIDTH - 1)) {
             return this.board[row][col];
         }
         return null;
     }
 
     public void setCell(int row, int col, State.Pawn p) {
-        if (!(row < 0 || col < 0 || row > WIDTH || col > WIDTH)) {
+        if (!(row < 0 || col < 0 || row > WIDTH - 1 || col > WIDTH - 1)) {
             this.board[row][col] = p;
         }
     }
@@ -103,10 +104,59 @@ public class BoardImpl implements Board{
         this.board = newBoard;
     }
 
+    @Override
+    public List<Pair<Integer, Integer>> getHorizontalLeftCells(int row, int col) {
+        List<Pair<Integer, Integer>> horLeftCells = new ArrayList<>();
+        IntStream.range(0, col).forEach((p) -> {
+            horLeftCells.add(new Pair<>(row, p));
+        });
+        return horLeftCells;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getHorizontalRightCells(int row, int col) {
+        List<Pair<Integer, Integer>> horRightCells = new ArrayList<>();
+        IntStream.range(col + 1, WIDTH).forEach((p) -> {
+            horRightCells.add(new Pair<>(row, p));
+
+        });
+        return horRightCells;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getVerticalUpCells(int row, int col) {
+        List<Pair<Integer, Integer>> verUpCells = new ArrayList<>();
+        IntStream.range(0, row).forEach((p) -> {
+            verUpCells.add(new Pair<>(p, col));
+        });
+        return verUpCells;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getVerticalDownCells(int row, int col) {
+        List<Pair<Integer, Integer>> verDownCells = new ArrayList<>();
+        IntStream.range(row + 1, WIDTH).forEach((p) -> {
+            verDownCells.add(new Pair<>(p, col));
+        });
+        return verDownCells;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getWhitePositions() {
+        return this.whitePos;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getBlackPositions() {
+        return this.blackPos;
+    }
+
     private void setWhitePositions() {
         WHITE_POS.forEach((pos) -> {
             this.setCell(pos, NUM_OF_WHITES_PER_ROW, State.Pawn.WHITE);
             this.setCell(NUM_OF_WHITES_PER_ROW, pos, State.Pawn.WHITE);
+            this.whitePos.add(new Pair<>(pos, NUM_OF_WHITES_PER_ROW));
+            this.whitePos.add(new Pair<>(NUM_OF_WHITES_PER_ROW, pos));
         });
     }
 
@@ -115,10 +165,14 @@ public class BoardImpl implements Board{
                 BLACK_EDGES_2.forEach((b_edge_2) -> {
                     this.setCell(b_edge_1, b_edge_2, State.Pawn.BLACK);
                     this.setCell(b_edge_2, b_edge_1, State.Pawn.BLACK);
+                    this.blackPos.add(new Pair<>(b_edge_1, b_edge_2));
+                    this.blackPos.add(new Pair<>(b_edge_2, b_edge_1));
                 }));
         INTERNAL_BLACK_1.forEach((i_b_1) -> {
             this.setCell(i_b_1, INTERNAL_BLACK_2, State.Pawn.BLACK);
             this.setCell(INTERNAL_BLACK_2, i_b_1, State.Pawn.BLACK);
+            this.blackPos.add(new Pair<>(i_b_1, INTERNAL_BLACK_2));
+            this.blackPos.add(new Pair<>(INTERNAL_BLACK_2, i_b_1));
         });
     }
 

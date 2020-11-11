@@ -11,6 +11,8 @@ public interface Board {
 
     State.Pawn getCell(int row, int col);
 
+    BoardImpl.SquareType getSquareType(int row, int col);
+
     void setCell(int row, int col, State.Pawn p);
 
     void setBoard(State.Pawn[][] newBoard);

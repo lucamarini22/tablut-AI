@@ -51,7 +51,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
 
     MyGame<S, A, P> game;
     private Metrics metrics = new Metrics();
-    private int depth;
+    private final int depth;
 
 
     /**

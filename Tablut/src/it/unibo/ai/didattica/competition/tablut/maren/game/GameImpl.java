@@ -37,7 +37,9 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public MyState getResult(MyState myState, MyAction action) {
-        return new MyStateImpl(4);
+        MyState resultState = myState.getMyStateSnapshot();
+        resultState.applyAction(action);
+        return resultState;
     }
 
     @Override

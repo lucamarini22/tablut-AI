@@ -21,7 +21,10 @@ public interface MyState {
 
     void updateState(State currentState);
 
+    MyState getMyStateSnapshot();
 
+    void setMyBoard(Board board);
 
+    void applyAction(MyAction action);
 
 }

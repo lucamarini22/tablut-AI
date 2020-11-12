@@ -9,9 +9,10 @@ import java.util.List;
 
 public class MyStateImpl implements MyState {
 
-    private final Board board;
+    private Board board;
     private State.Turn turn;
     private int currentDepth;
+    private static final int DEPTH = 4;
 
     public MyStateImpl(int depth) {
         this.setTurn(State.Turn.WHITE);
@@ -28,6 +29,25 @@ public class MyStateImpl implements MyState {
     public void updateState(State currentState) {
         this.board.setBoard(currentState.getBoard());
         this.setTurn(currentState.getTurn());
+        this.setCurrentDepth(DEPTH);
+    }
+
+    @Override
+    public MyState getMyStateSnapshot() {
+        MyState snapshot = new MyStateImpl(this.currentDepth);
+        snapshot.setMyBoard(this.board);
+        snapshot.setTurn(this.getTurn());
+        return snapshot;
+    }
+
+    @Override
+    public void setMyBoard(Board board) {
+        this.board = board;
+    }
+
+    @Override
+    public void applyAction(MyAction action) {
+
     }
 
 
@@ -245,22 +265,10 @@ public class MyStateImpl implements MyState {
         }
 
 
+        // Print all the possible positions
+        //allPossibleActions.forEach(System.out::println);
+        //System.out.println(allPossibleActions.size());
 
-
-
-
-
-
-        allPossibleActions.forEach(System.out::println);
-        System.out.println(allPossibleActions.size());
-
-
-        /*
-        List l = new LinkedList<>();
-        MyAction a = new MyActionImpl("e3", "f3", this.getTurn());
-        MyAction b = new MyActionImpl("e4", "f4", this.getTurn());
-        l.add(a);
-        l.add(b);*/
         return allPossibleActions;
     }
 

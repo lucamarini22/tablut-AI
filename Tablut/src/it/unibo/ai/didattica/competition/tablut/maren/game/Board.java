@@ -29,6 +29,16 @@ public interface Board {
 
     List<Pair<Integer, Integer>> getBlackPositions();
 
+    boolean isCamp(int row, int col);
+
+    boolean isEscape(int row, int col);
+
+    boolean isCastle(int row, int col);
+
+    boolean isThereAPawn(int row, int col);
+
+    String fromIntToLetter(int i);
+
     // changeWhitePos -> cambia la posizione del bianco sia nella Pawn[][] che nella lista delle pos dei bianchi ?
 
     // changeBlackPos -> "  "   "       "      " nero   "       "               "                   "  " neri ?

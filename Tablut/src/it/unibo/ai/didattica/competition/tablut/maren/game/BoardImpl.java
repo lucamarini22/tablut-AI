@@ -31,6 +31,9 @@ public class BoardImpl implements Board{
     private final List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
     private final List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
 
+    private final HashMap<Integer, String> intLetterMap = new HashMap<>();
+
+
 
 
     public BoardImpl() {
@@ -60,6 +63,7 @@ public class BoardImpl implements Board{
         this.setWhitePositions();
         this.setBlackPositions();
         this.setSpecialSquares();
+        this.initializeIntToLetterMap();
 
         /*this.board[2][4] = State.Pawn.WHITE;
         this.board[3][4] = State.Pawn.WHITE;
@@ -96,7 +100,7 @@ public class BoardImpl implements Board{
 
     @Override
     public SquareType getSquareType(int row, int col) {
-        return this.specialSquares.get(new Pair<Integer, Integer>(row, col));
+        return this.specialSquares.get(new Pair<>(row, col));
     }
 
     public void setCell(int row, int col, State.Pawn p) {
@@ -112,9 +116,10 @@ public class BoardImpl implements Board{
     @Override
     public List<Pair<Integer, Integer>> getHorizontalLeftCells(int row, int col) {
         List<Pair<Integer, Integer>> horLeftCells = new ArrayList<>();
-        IntStream.range(0, col).forEach((p) -> {
+        int p;
+        for (p = col; p > 0; p--) {
             horLeftCells.add(new Pair<>(row, p));
-        });
+        }
         return horLeftCells;
     }
 
@@ -131,9 +136,10 @@ public class BoardImpl implements Board{
     @Override
     public List<Pair<Integer, Integer>> getVerticalUpCells(int row, int col) {
         List<Pair<Integer, Integer>> verUpCells = new ArrayList<>();
-        IntStream.range(0, row).forEach((p) -> {
+        int p;
+        for (p = row; p > 0; p--) {
             verUpCells.add(new Pair<>(p, col));
-        });
+        }
         return verUpCells;
     }
 
@@ -154,6 +160,31 @@ public class BoardImpl implements Board{
     @Override
     public List<Pair<Integer, Integer>> getBlackPositions() {
         return this.blackPos;
+    }
+
+    @Override
+    public boolean isCamp(int row, int col) {
+        return this.getSquareType(row, col) == SquareType.CAMP;
+    }
+
+    @Override
+    public boolean isEscape(int row, int col) {
+        return this.getSquareType(row, col) == SquareType.ESCAPE;
+    }
+
+    @Override
+    public boolean isCastle(int row, int col) {
+        return this.getSquareType(row, col) == SquareType.CASTLE;
+    }
+
+    @Override
+    public boolean isThereAPawn(int row, int col) {
+        return ! (this.getCell(row, col) == State.Pawn.EMPTY);
+    }
+
+    @Override
+    public String fromIntToLetter(int i) {
+        return this.intLetterMap.get(i);
     }
 
     private void setWhitePositions() {
@@ -203,5 +234,22 @@ public class BoardImpl implements Board{
 
         // Set the castle
         this.specialSquares.put(new Pair<>(KING_X, KING_Y), BoardImpl.SquareType.CASTLE);
+    }
+
+    private void initializeIntToLetterMap() {
+        List<String> letters = new ArrayList<String>();
+        letters.add("A");
+        letters.add("B");
+        letters.add("C");
+        letters.add("D");
+        letters.add("E");
+        letters.add("F");
+        letters.add("G");
+        letters.add("H");
+        letters.add("I");
+        IntStream.range(0, WIDTH).forEach((num) -> {
+            this.intLetterMap.put(num, letters.get(num));
+        });
+
     }
 }

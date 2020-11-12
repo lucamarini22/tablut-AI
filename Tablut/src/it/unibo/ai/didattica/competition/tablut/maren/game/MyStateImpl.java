@@ -1,6 +1,9 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
+import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -45,6 +48,36 @@ public class MyStateImpl implements MyState {
                     If it can move there, then add the move into the List of MyAction that has to be returned,
                     if not, do not add (and if not, because there's another pawn, then stop to go to that direction)
          */
+        List<MyAction> allPossibleActions = new ArrayList<>();
+        List<Pair<Integer, Integer>> whitePositions = this.board.getWhitePositions();
+        List<Pair<Integer, Integer>> blackPositions = this.board.getBlackPositions();
+
+        whitePositions.forEach(wp -> {
+            List<Pair<Integer, Integer>> horLeftCells = this.board.getHorizontalLeftCells(wp.getFirst(), wp.getSecond());
+            horLeftCells.forEach((hor_l_c) -> {
+                // If the cell is not a camp and is not a castle, then I can move
+                if ((! this.board.isCamp(hor_l_c.getFirst(), hor_l_c.getSecond()))
+                        && (! this.board.isCastle(hor_l_c.getFirst(), hor_l_c.getSecond()))) {
+                    // If in the cell there's not another Pawn add the cell to the possible actions
+                    if (! (this.board.isThereAPawn(hor_l_c.getFirst(), hor_l_c.getSecond())) ) {
+                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
+                                this.board.fromIntToLetter(hor_l_c.getSecond()) + (hor_l_c.getFirst() + 1), this.getTurn()));
+                    }
+                }
+            });
+
+            List<Pair<Integer, Integer>> horRightCells = this.board.getHorizontalRightCells(wp.getFirst(), wp.getSecond());
+
+            List<Pair<Integer, Integer>> vertUpCells = this.board.getVerticalUpCells(wp.getFirst(), wp.getSecond());
+
+            List<Pair<Integer, Integer>> verDownCells = this.board.getVerticalDownCells(wp.getFirst(), wp.getSecond());
+
+        });
+
+        // do the same for blackPos!!
+
+
+
 
 
 

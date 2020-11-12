@@ -96,10 +96,14 @@ public class MarenTablutAIClient extends TablutClient {
                     // TO-DO
 
                     Action a = null;
+                    MyAction a2 = this.alphaBetaSearch.makeDecision(myState);
+                    String from = state.getBox(a2.getRowFrom(), a2.getColumnFrom());
+                    String to = state.getBox(a2.getRowTo(), a2.getColumnTo());
                     try {
-                        a = new Action("a4", "b4", State.Turn.BLACK);
+                        a = new Action(from, to, StateTablut.Turn.BLACK);
                     } catch (IOException ignored) {
                     }
+                    System.out.println("Mossa scelta: " + a.toString());
                     try {
                         this.write(a);
                     } catch (ClassNotFoundException | IOException ignored) {

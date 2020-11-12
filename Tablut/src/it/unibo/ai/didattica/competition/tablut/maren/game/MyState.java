@@ -11,6 +11,8 @@ public interface MyState {
 
     State.Turn getTurn();
 
+    void setTurn(State.Turn turn);
+
     List<MyAction> getPossibleActions();
 
     int getCurrentDepth();

@@ -117,7 +117,7 @@ public class BoardImpl implements Board{
     public List<Pair<Integer, Integer>> getHorizontalLeftCells(int row, int col) {
         List<Pair<Integer, Integer>> horLeftCells = new ArrayList<>();
         int p;
-        for (p = col; p > 0; p--) {
+        for (p = col - 1; p >= 0; p--) {
             horLeftCells.add(new Pair<>(row, p));
         }
         return horLeftCells;
@@ -137,7 +137,7 @@ public class BoardImpl implements Board{
     public List<Pair<Integer, Integer>> getVerticalUpCells(int row, int col) {
         List<Pair<Integer, Integer>> verUpCells = new ArrayList<>();
         int p;
-        for (p = row; p > 0; p--) {
+        for (p = row - 1; p >= 0; p--) {
             verUpCells.add(new Pair<>(p, col));
         }
         return verUpCells;
@@ -194,6 +194,7 @@ public class BoardImpl implements Board{
             this.whitePos.add(new Pair<>(pos, NUM_OF_WHITES_PER_ROW));
             this.whitePos.add(new Pair<>(NUM_OF_WHITES_PER_ROW, pos));
         });
+        this.whitePos.add(new Pair<>(KING_X, KING_Y));
     }
 
     private void setBlackPositions() {

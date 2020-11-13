@@ -1,0 +1,24 @@
+Nov 12, 2020 10:55:32 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Accensione server
+Nov 12, 2020 10:55:32 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Partita di Tablut
+Nov 12, 2020 10:55:32 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for white connection..
+Nov 12, 2020 10:55:36 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player connected
+Nov 12, 2020 10:55:36 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura nome player bianco in corso..
+Nov 12, 2020 10:55:37 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: White player name:	MarenTablu
+Nov 12, 2020 10:55:37 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Waiting for Black connection..
+Nov 12, 2020 10:55:38 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Accettata connessione con client giocatore Nero
+Nov 12, 2020 10:55:38 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Lettura nome player nero in corso..
+Nov 12, 2020 10:55:38 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Black player name:	FailureStateBLACK
+Nov 12, 2020 10:55:39 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+FINE: Errore invio messaggio ai giocatori
+Nov 12, 2020 10:55:39 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+WARNING: Chiusura sistema

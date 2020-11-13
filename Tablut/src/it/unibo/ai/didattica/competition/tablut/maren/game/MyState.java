@@ -1,10 +1,8 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
-import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
-import java.io.IOException;
-import java.util.LinkedList;
+
 import java.util.List;
 
 public interface MyState {
@@ -19,12 +17,14 @@ public interface MyState {
 
     void setCurrentDepth(int currentDepth);
 
-    void updateState(State currentState);
+    MyState updateState(State currentState);
 
     MyState getMyStateSnapshot();
 
     void setMyBoard(Board board);
 
     void applyAction(MyAction action);
+
+    void printBoard();
 
 }

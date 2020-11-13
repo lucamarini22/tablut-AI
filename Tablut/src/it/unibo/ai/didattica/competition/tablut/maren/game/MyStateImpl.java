@@ -4,7 +4,6 @@ import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MyStateImpl implements MyState {
@@ -26,17 +25,28 @@ public class MyStateImpl implements MyState {
 
 
     @Override
-    public void updateState(State currentState) {
-        this.board.setBoard(currentState.getBoard());
-        this.setTurn(currentState.getTurn());
-        this.setCurrentDepth(DEPTH);
+    public MyState updateState(State currentState) {
+        MyState updatedState = new MyStateImpl(DEPTH);
+        Board updatedBoard = new BoardImpl();
+        updatedBoard.setBoard(currentState.getBoard());
+        updatedBoard.setWhitePositions(this.board.getWhitePositionsFromBoard(updatedBoard.getBoard()));
+        updatedBoard.setBlackPositions(this.board.getBlackPositionsFromBoard(updatedBoard.getBoard()));
+        updatedState.setMyBoard(updatedBoard);
+        updatedState.setTurn(currentState.getTurn());
+        return updatedState;
     }
 
     @Override
     public MyState getMyStateSnapshot() {
-        MyState snapshot = new MyStateImpl(this.currentDepth);
-        snapshot.setMyBoard(this.board);
+        MyState snapshot = new MyStateImpl(this.getCurrentDepth());
+        // clone the board and pass it to the new snapshot state
+        Board boardSnapshot = new BoardImpl();
+        boardSnapshot.setBoard(this.board.getBoard());
+        boardSnapshot.setWhitePositions(this.board.getWhitePositions());
+        boardSnapshot.setBlackPositions(this.board.getBlackPositions());
+        snapshot.setMyBoard(boardSnapshot);
         snapshot.setTurn(this.getTurn());
+        snapshot.setCurrentDepth(this.getCurrentDepth());
         return snapshot;
     }
 
@@ -47,7 +57,37 @@ public class MyStateImpl implements MyState {
 
     @Override
     public void applyAction(MyAction action) {
+        // Modify the Pawn position of Board, and update black and white Pos
+        if (this.getCurrentDepth() > 0) {
+            // Update white position
+            // this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+            if (this.getTurn().equals(State.Turn.WHITE)) {
+                this.board.updateWhitePos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
+                if (this.board.getCell(action.getRowFrom(), action.getColumnFrom()).equals(State.Pawn.KING)) {
+                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.KING);
+                } else {
+                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.WHITE);
+                }
+                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACK);
+            } else {
+                // Update black position
+                this.board.updateBlackPos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
+                this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.BLACK);
+                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+                this.setTurn(State.Turn.WHITE);
+            }
+        }
 
+    }
+
+    public void printBoard() {
+        this.board.printBoard();
+
+        /*List<Pair<Integer, Integer>> list = this.board.getWhitePositions();
+        for (Pair<Integer, Integer> pos : list) {
+            System.out.println(pos);
+        }*/
     }
 
 
@@ -77,7 +117,7 @@ public class MyStateImpl implements MyState {
         List<Pair<Integer, Integer>> whitePositions = this.board.getWhitePositions();
         List<Pair<Integer, Integer>> blackPositions = this.board.getBlackPositions();
 
-        if (this.getTurn() == State.Turn.WHITE) {
+        if (this.getTurn().equals(State.Turn.WHITE)) {
             // Get all possible white actions
             whitePositions.forEach(wp -> {
 
@@ -266,8 +306,10 @@ public class MyStateImpl implements MyState {
 
 
         // Print all the possible positions
-        //allPossibleActions.forEach(System.out::println);
+        // allPossibleActions.forEach(System.out::println);
         //System.out.println(allPossibleActions.size());
+
+
 
         return allPossibleActions;
     }

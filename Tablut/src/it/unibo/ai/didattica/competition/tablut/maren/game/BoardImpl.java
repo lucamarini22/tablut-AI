@@ -28,8 +28,8 @@ public class BoardImpl implements Board{
 
     private State.Pawn[][] board;
     private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();
-    private final List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
-    private final List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
+            private List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
+    private List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
 
     private final HashMap<Integer, String> intLetterMap = new HashMap<>();
 
@@ -46,6 +46,16 @@ public class BoardImpl implements Board{
         ESCAPE
     }
 
+
+    public void printBoard() {
+        for(int i=0; i < this.getBoard().length; i++) {
+            for(int j=0; j < this.getBoard().length; j++) {
+                System.out.print(this.getBoard()[i][j]+ "|");
+            }
+            System.out.println("");
+        }
+    }
+
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 
@@ -60,8 +70,8 @@ public class BoardImpl implements Board{
         // this.turn = State.Turn.BLACK;
 
         this.setCell(KING_X, KING_Y, State.Pawn.KING);
-        this.setWhitePositions();
-        this.setBlackPositions();
+        this.setInitialWhitePositions();
+        this.setInitialBlackPositions();
         this.setSpecialSquares();
         this.initializeIntToLetterMap();
 
@@ -109,8 +119,17 @@ public class BoardImpl implements Board{
         }
     }
 
+    @Override
+    public State.Pawn[][] getBoard() {
+        return this.board;
+    }
+
     public void setBoard(State.Pawn[][] newBoard) {
-        this.board = newBoard;
+        IntStream.range(0, WIDTH).forEach((i) -> {
+            IntStream.range(0, WIDTH).forEach((j) -> {
+                this.setCell(i, j, newBoard[i][j]);
+            });
+        });
     }
 
     @Override
@@ -154,12 +173,49 @@ public class BoardImpl implements Board{
 
     @Override
     public List<Pair<Integer, Integer>> getWhitePositions() {
-        return this.whitePos;
+        return new ArrayList<>(this.whitePos);
+    }
+
+    @Override
+    public void setWhitePositions(List<Pair<Integer, Integer>> whitePositions) {
+        this.whitePos = whitePositions;
+
     }
 
     @Override
     public List<Pair<Integer, Integer>> getBlackPositions() {
-        return this.blackPos;
+        return new ArrayList<>(this.blackPos);
+    }
+
+    @Override
+    public void setBlackPositions(List<Pair<Integer, Integer>> blackPositions) {
+        this.blackPos = blackPositions;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getWhitePositionsFromBoard(State.Pawn[][] board) {
+        List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
+        IntStream.range(0, WIDTH).forEach((i) -> {
+            IntStream.range(0, WIDTH).forEach((j) -> {
+                if (board[i][j] == State.Pawn.WHITE || board[i][j] == State.Pawn.KING) {
+                    whitePos.add(new Pair<>(i, j));
+                }
+            });
+        });
+        return whitePos;
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getBlackPositionsFromBoard(State.Pawn[][] board) {
+        List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
+        IntStream.range(0, WIDTH).forEach((i) -> {
+            IntStream.range(0, WIDTH).forEach((j) -> {
+                if (board[i][j] == State.Pawn.BLACK) {
+                    whitePos.add(new Pair<>(i, j));
+                }
+            });
+        });
+        return whitePos;
     }
 
     @Override
@@ -187,7 +243,19 @@ public class BoardImpl implements Board{
         return this.intLetterMap.get(i);
     }
 
-    private void setWhitePositions() {
+    @Override
+    public void updateWhitePos(int rowFrom, int colFrom, int rowTo, int colTo) {
+        this.whitePos.remove(new Pair<>(rowFrom, colFrom));
+        this.whitePos.add(new Pair<>(rowTo, colTo));
+    }
+
+    @Override
+    public void updateBlackPos(int rowFrom, int colFrom, int rowTo, int colTo) {
+        this.blackPos.remove(new Pair<>(rowFrom, colFrom));
+        this.blackPos.add(new Pair<>(rowTo, colTo));
+    }
+
+    private void setInitialWhitePositions() {
         WHITE_POS.forEach((pos) -> {
             this.setCell(pos, NUM_OF_WHITES_PER_ROW, State.Pawn.WHITE);
             this.setCell(NUM_OF_WHITES_PER_ROW, pos, State.Pawn.WHITE);
@@ -197,7 +265,7 @@ public class BoardImpl implements Board{
         this.whitePos.add(new Pair<>(KING_X, KING_Y));
     }
 
-    private void setBlackPositions() {
+    private void setInitialBlackPositions() {
         BLACK_EDGES_1.forEach((b_edge_1) ->
                 BLACK_EDGES_2.forEach((b_edge_2) -> {
                     this.setCell(b_edge_1, b_edge_2, State.Pawn.BLACK);

@@ -9,7 +9,7 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
-    private MyState myState;
+    private final MyState myState;
 
     public GameImpl(int depth) {
         this.myState = new MyStateImpl(depth);

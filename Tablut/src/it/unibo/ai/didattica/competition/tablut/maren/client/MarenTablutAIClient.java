@@ -23,7 +23,7 @@ public class MarenTablutAIClient extends TablutClient {
     public MarenTablutAIClient(String player, String name, int timeout, String ipAddress) throws UnknownHostException, IOException {
         super(player, name, timeout, ipAddress);
         MyGame<MyState, MyAction, State.Turn> game = new GameImpl(4);
-        this.alphaBetaSearch = new AlphaBetaSearch<MyState, MyAction, State.Turn>(game, DEPTH);
+        this.alphaBetaSearch = new AlphaBetaSearch<>(game, DEPTH);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MarenTablutAIClient extends TablutClient {
         rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
         // algorithm = new AlphaBetaSearch(rules);
         System.out.println("You are player " + this.getPlayer().toString() + "!");
-        MyState myState = new MyStateImpl(DEPTH);
+        // MyState myState = new MyStateImpl(DEPTH);
 
 
         while (true) {
@@ -50,16 +50,18 @@ public class MarenTablutAIClient extends TablutClient {
                 System.exit(1);
             }
             state = this.getCurrentState();
-            myState.updateState(state);
+            MyState myState = new MyStateImpl(DEPTH).updateState(state);
             System.out.println("Current state:");
             System.out.println(state.toString());
+            myState.printBoard();
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ignored) {
             }
 
             if (this.getPlayer().equals(State.Turn.WHITE)) {
-                if (state.getTurn().equals(StateTablut.Turn.WHITE)) {
+                if (state.getTurn().equals(State.Turn.WHITE)) {
                     // TO-DO
 
                     Action a = null;
@@ -92,7 +94,7 @@ public class MarenTablutAIClient extends TablutClient {
                 }
 
             } else {
-                if (state.getTurn().equals(StateTablut.Turn.BLACK)) {
+                if (state.getTurn().equals(State.Turn.BLACK)) {
                     // TO-DO
 
                     Action a = null;

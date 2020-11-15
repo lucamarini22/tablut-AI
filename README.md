@@ -1,14 +1,6 @@
 # TablutAI
 
-
-## Installation on Ubuntu/Debian 
-
-Install JDK 8 and Gradle:
-
-```
-sudo apt update
-sudo apt install openjdk-8-jdk -y
-```
+Install Gradle.
 
 Gradle Installation: https://gradle.org/install/
 

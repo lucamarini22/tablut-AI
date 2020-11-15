@@ -1,58 +1,31 @@
 # TablutAI
-Software for the Tablut Students Competition
 
-## Installation on Ubuntu/Debian 
+Install Gradle.
 
-From console, run these commands to install JDK 8 e ANT:
+Gradle Installation: https://gradle.org/install/
 
-```
-sudo apt update
-sudo apt install openjdk-8-jdk -y
-sudo apt install ant -y
-```
 
-Now, clone the project repository:
-
-```
-git clone https://github.com/AGalassi/TablutCompetition.git
-```
-
-## Run the Server without Eclipse
-
-The easiest way is to utilize the ANT configuration script from console.
-Go into the project folder (the folder with the `build.xml` file):
+Go into the project folder:
 ```
 cd TablutCompetition/Tablut
 ```
 
-Compile the project:
-
+Run the server in a shell using the following command:
 ```
-ant clean
-ant compile
+gradle Server
 ```
 
-The compiled project is in  the `build` folder.
-Run the server with:
-
+To see the GUI , run the server using this command:
 ```
-ant server
-```
-
-To visualize the gui too, run the the server with the following command:
-```
-ant server -Dgui=-g
+gradle Server --args="-g true"
 ```
 
 
-Check the behaviour using the random players in two different console windows:
-
+Run the white player in a new shell using this command:
 ```
-ant randomwhite
-
-ant randomblack
+gradle MarenTablutAI --args="white 60 127.0.0.1"
 ```
-
-At this point, a window with the game state should appear.
-
-To be able to run other classes, change the `build.xml` file and re-compile everything
+Then, run the black player in a new shell using this command:
+```
+gradle MarenTablutAI --args="black 60 127.0.0.1"
+```

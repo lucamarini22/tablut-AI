@@ -17,7 +17,7 @@ gradle Server
 
 To see the GUI , run the server using this command:
 ```
-gradle Server -g true
+gradle Server --args="-g true"
 ```
 
 

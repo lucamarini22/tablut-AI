@@ -55,32 +55,6 @@ public class MyStateImpl implements MyState {
         this.board = board;
     }
 
-    @Override
-    public void applyAction(MyAction action) {
-        // Modify the Pawn position of Board, and update black and white Pos
-        if (this.getCurrentDepth() > 0) {
-            // Update white position
-            // this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
-            if (this.isWhiteTurn()) {
-                this.board.updateWhitePos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
-                if (this.board.getCell(action.getRowFrom(), action.getColumnFrom()).equals(State.Pawn.KING)) {
-                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.KING);
-                } else {
-                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.WHITE);
-                }
-                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
-                this.setTurn(State.Turn.BLACK);
-            } else {
-                // Update black position
-                this.board.updateBlackPos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
-                this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.BLACK);
-                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
-                this.setTurn(State.Turn.WHITE);
-            }
-        }
-
-    }
-
     public void printBoard() {
         this.board.printBoard();
 
@@ -156,14 +130,37 @@ public class MyStateImpl implements MyState {
 
         }
 
-
         // Print all the possible positions
         // allPossibleActions.forEach(System.out::println);
         //System.out.println(allPossibleActions.size());
-
-
-
         return allPossibleActions;
+    }
+
+    @Override
+    public void applyAction(MyAction action) {
+        // Modify the Pawn position of Board, and update black and white Pos
+        if (this.getCurrentDepth() > 0) {
+            // Update white position
+            // this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+            if (this.isWhiteTurn()) {
+                this.board.updateWhitePos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
+                if (this.board.getCell(action.getRowFrom(), action.getColumnFrom()).equals(State.Pawn.KING)) {
+                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.KING);
+                } else {
+                    this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.WHITE);
+                }
+                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACK);
+            } else {
+                // Update black position
+                this.board.updateBlackPos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
+                this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.BLACK);
+                this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
+                this.setTurn(State.Turn.WHITE);
+            }
+            this.applyCapture();
+        }
+
     }
 
     private boolean isWhiteTurn() {
@@ -182,7 +179,6 @@ public class MyStateImpl implements MyState {
                     && (!this.board.isCamp(cell.getFirst(), cell.getSecond()))) {
                 allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
                         this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
-
             }
         }
     }
@@ -212,9 +208,11 @@ public class MyStateImpl implements MyState {
                 }
             }
         }
-
-
     }
+
+    private void applyCapture() {
+
+    };
 
     @Override
     public int getCurrentDepth() {

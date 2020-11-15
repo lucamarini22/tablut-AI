@@ -61,7 +61,7 @@ public class MyStateImpl implements MyState {
         if (this.getCurrentDepth() > 0) {
             // Update white position
             // this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
-            if (this.getTurn().equals(State.Turn.WHITE)) {
+            if (this.isWhiteTurn()) {
                 this.board.updateWhitePos(action.getRowFrom(), action.getColumnFrom(), action.getRowTo(), action.getColumnTo());
                 if (this.board.getCell(action.getRowFrom(), action.getColumnFrom()).equals(State.Pawn.KING)) {
                     this.board.setCell(action.getRowTo(), action.getColumnTo(), State.Pawn.KING);
@@ -117,189 +117,41 @@ public class MyStateImpl implements MyState {
         List<Pair<Integer, Integer>> whitePositions = this.board.getWhitePositions();
         List<Pair<Integer, Integer>> blackPositions = this.board.getBlackPositions();
 
-        if (this.getTurn().equals(State.Turn.WHITE)) {
+        if (this.isWhiteTurn()) {
             // Get all possible white actions
             whitePositions.forEach(wp -> {
-
                 // Get all possible horizontal left actions for white Pawns
                 List<Pair<Integer, Integer>> horLeftCells = this.board.getHorizontalLeftCells(wp.getFirst(), wp.getSecond());
-                for (Pair<Integer, Integer> hor_l_c : horLeftCells) {
-                    // If there's a Pawn, break and consider the next white Pawn
-                    if (this.board.isThereAPawn(hor_l_c.getFirst(), hor_l_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle and it is not a camp
-                    if ((!this.board.isCastle(hor_l_c.getFirst(), hor_l_c.getSecond()))
-                            && (!this.board.isCamp(hor_l_c.getFirst(), hor_l_c.getSecond()))) {
-                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
-                                this.board.fromIntToLetter(hor_l_c.getSecond()) + (hor_l_c.getFirst() + 1), this.getTurn()));
-
-                    }
-                }
-
+                this.addAllPossibleWhiteActionsInOneDirection(allPossibleActions, horLeftCells, wp);
 
                 // Get all possible horizontal actions
                 List<Pair<Integer, Integer>> horRightCells = this.board.getHorizontalRightCells(wp.getFirst(), wp.getSecond());
-                for (Pair<Integer, Integer> hor_r_c : horRightCells) {
-                    // If there's a Pawn, break and consider the next white Pawn
-                    if (this.board.isThereAPawn(hor_r_c.getFirst(), hor_r_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle and it is not a camp
-                    if ((!this.board.isCastle(hor_r_c.getFirst(), hor_r_c.getSecond()))
-                            && (!this.board.isCamp(hor_r_c.getFirst(), hor_r_c.getSecond()))) {
-                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
-                                this.board.fromIntToLetter(hor_r_c.getSecond()) + (hor_r_c.getFirst() + 1), this.getTurn()));
-
-                    }
-                }
+                this.addAllPossibleWhiteActionsInOneDirection(allPossibleActions, horRightCells, wp);
 
                 List<Pair<Integer, Integer>> vertUpCells = this.board.getVerticalUpCells(wp.getFirst(), wp.getSecond());
-                for (Pair<Integer, Integer> vert_up_c : vertUpCells) {
-                    // If there's a Pawn, break and consider the next white Pawn
-                    if (this.board.isThereAPawn(vert_up_c.getFirst(), vert_up_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle and it is not a camp
-                    if ((!this.board.isCastle(vert_up_c.getFirst(), vert_up_c.getSecond()))
-                            && (!this.board.isCamp(vert_up_c.getFirst(), vert_up_c.getSecond()))) {
-                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
-                                this.board.fromIntToLetter(vert_up_c.getSecond()) + (vert_up_c.getFirst() + 1), this.getTurn()));
-
-                    }
-                }
-
+                this.addAllPossibleWhiteActionsInOneDirection(allPossibleActions, vertUpCells, wp);
 
                 List<Pair<Integer, Integer>> verDownCells = this.board.getVerticalDownCells(wp.getFirst(), wp.getSecond());
-                for (Pair<Integer, Integer> vert_d_c : verDownCells) {
-                    // If there's a Pawn, break and consider the next white Pawn
-                    if (this.board.isThereAPawn(vert_d_c.getFirst(), vert_d_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle and it is not a camp
-                    if ((!this.board.isCastle(vert_d_c.getFirst(), vert_d_c.getSecond()))
-                            && (!this.board.isCamp(vert_d_c.getFirst(), vert_d_c.getSecond()))) {
-                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
-                                this.board.fromIntToLetter(vert_d_c.getSecond()) + (vert_d_c.getFirst() + 1), this.getTurn()));
-
-                    }
-                }
-
+                this.addAllPossibleWhiteActionsInOneDirection(allPossibleActions, verDownCells, wp);
             });
         } else {
             // Get all possible black actions
-
             blackPositions.forEach(bp -> {
-
                 // Get all possible horizontal left actions
                 List<Pair<Integer, Integer>> horLeftCells = this.board.getHorizontalLeftCells(bp.getFirst(), bp.getSecond());
-                for (Pair<Integer, Integer> hor_l_c : horLeftCells) {
-                    // If there's a Pawn, break and consider the next black Pawn
-                    if ( this.board.isThereAPawn(hor_l_c.getFirst(), hor_l_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle
-                    if ( (! this.board.isCastle(hor_l_c.getFirst(), hor_l_c.getSecond()))) {
-
-                        if (this.board.isCamp(hor_l_c.getFirst(), hor_l_c.getSecond())) {
-                            // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
-                            if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
-                                // If the black was already in the camp, then he can move into the camp
-                                allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                        this.board.fromIntToLetter(hor_l_c.getSecond()) + (hor_l_c.getFirst() + 1), this.getTurn()));
-                            }
-
-                        } else {
-                            // If in the cell is a camp, then I can move into it (I add it into the possible actions)
-                            allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                    this.board.fromIntToLetter(hor_l_c.getSecond()) + (hor_l_c.getFirst() + 1), this.getTurn()));
-                        }
-                    }
-                }
-
+                this.addAllPossibleBlackActionsInOneDirection(allPossibleActions, horLeftCells, bp);
 
                 // Get all possible horizontal right actions
                 List<Pair<Integer, Integer>> horRightCells = this.board.getHorizontalRightCells(bp.getFirst(), bp.getSecond());
-                for (Pair<Integer, Integer> hor_r_c : horRightCells) {
-                    // If there's a Pawn, break and consider the next black Pawn
-                    if ( this.board.isThereAPawn(hor_r_c.getFirst(), hor_r_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle
-                    if ( (! this.board.isCastle(hor_r_c.getFirst(), hor_r_c.getSecond()))) {
-
-                        if (this.board.isCamp(hor_r_c.getFirst(), hor_r_c.getSecond())) {
-                            // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
-                            if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
-                                // If the black was already in the camp, then he can move into the camp
-                                allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                        this.board.fromIntToLetter(hor_r_c.getSecond()) + (hor_r_c.getFirst() + 1), this.getTurn()));
-                            }
-
-                        } else {
-                            // If in the cell is a camp, then I can move into it (I add it into the possible actions)
-                            allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                    this.board.fromIntToLetter(hor_r_c.getSecond()) + (hor_r_c.getFirst() + 1), this.getTurn()));
-                        }
-                    }
-                }
-
+                this.addAllPossibleBlackActionsInOneDirection(allPossibleActions, horRightCells, bp);
 
                 // Get all possible vertical up actions
                 List<Pair<Integer, Integer>> vertUpCells = this.board.getVerticalUpCells(bp.getFirst(), bp.getSecond());
-                for (Pair<Integer, Integer> vert_up_c : vertUpCells) {
-                    // If there's a Pawn, break and consider the next black Pawn
-                    if ( this.board.isThereAPawn(vert_up_c.getFirst(), vert_up_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle
-                    if ( (! this.board.isCastle(vert_up_c.getFirst(), vert_up_c.getSecond()))) {
-
-                        if (this.board.isCamp(vert_up_c.getFirst(), vert_up_c.getSecond())) {
-                            // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
-                            if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
-                                // If the black was already in the camp, then he can move into the camp
-                                allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                        this.board.fromIntToLetter(vert_up_c.getSecond()) + (vert_up_c.getFirst() + 1), this.getTurn()));
-                            }
-
-                        } else {
-                            // If in the cell is a camp, then I can move into it (I add it into the possible actions)
-                            allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                    this.board.fromIntToLetter(vert_up_c.getSecond()) + (vert_up_c.getFirst() + 1), this.getTurn()));
-                        }
-                    }
-                }
-
+                this.addAllPossibleBlackActionsInOneDirection(allPossibleActions, vertUpCells, bp);
 
                 // Get all possible vertical up actions
                 List<Pair<Integer, Integer>> vertDownCells = this.board.getVerticalDownCells(bp.getFirst(), bp.getSecond());
-                for (Pair<Integer, Integer> vert_d_c : vertDownCells) {
-                    // If there's a Pawn, break and consider the next black Pawn
-                    if ( this.board.isThereAPawn(vert_d_c.getFirst(), vert_d_c.getSecond())) {
-                        break;
-                    }
-                    // If the cell is not a castle
-                    if ( (! this.board.isCastle(vert_d_c.getFirst(), vert_d_c.getSecond()))) {
-
-                        if (this.board.isCamp(vert_d_c.getFirst(), vert_d_c.getSecond())) {
-                            // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
-                            if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
-                                // If the black was already in the camp, then he can move into the camp
-                                allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                        this.board.fromIntToLetter(vert_d_c.getSecond()) + (vert_d_c.getFirst() + 1), this.getTurn()));
-                            }
-
-                        } else {
-                            // If in the cell is a camp, then I can move into it (I add it into the possible actions)
-                            allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
-                                    this.board.fromIntToLetter(vert_d_c.getSecond()) + (vert_d_c.getFirst() + 1), this.getTurn()));
-                        }
-                    }
-                }
-
-
-
+                this.addAllPossibleBlackActionsInOneDirection(allPossibleActions, vertDownCells, bp);
             });
 
         }
@@ -312,6 +164,56 @@ public class MyStateImpl implements MyState {
 
 
         return allPossibleActions;
+    }
+
+    private boolean isWhiteTurn() {
+        return  this.getTurn().equals(State.Turn.WHITE);
+    }
+
+    private void addAllPossibleWhiteActionsInOneDirection(List<MyAction> allPossibleActions, List<Pair<Integer
+            , Integer>> cellsInDirection, Pair<Integer, Integer> wp) {
+        for (Pair<Integer, Integer> cell : cellsInDirection) {
+            // If there's a Pawn, break and consider the next white Pawn
+            if (this.board.isThereAPawn(cell.getFirst(), cell.getSecond())) {
+                break;
+            }
+            // If the cell is not a castle and it is not a camp
+            if ((!this.board.isCastle(cell.getFirst(), cell.getSecond()))
+                    && (!this.board.isCamp(cell.getFirst(), cell.getSecond()))) {
+                allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
+                        this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
+
+            }
+        }
+    }
+
+    private void addAllPossibleBlackActionsInOneDirection(List<MyAction> allPossibleActions, List<Pair<Integer
+            , Integer>> cellsInDirection, Pair<Integer, Integer> bp){
+        for (Pair<Integer, Integer> cell : cellsInDirection) {
+            // If there's a Pawn, break and consider the next black Pawn
+            if ( this.board.isThereAPawn(cell.getFirst(), cell.getSecond())) {
+                break;
+            }
+            // If the cell is not a castle
+            if ( (! this.board.isCastle(cell.getFirst(), cell.getSecond()))) {
+
+                if (this.board.isCamp(cell.getFirst(), cell.getSecond())) {
+                    // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
+                    if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
+                        // If the black was already in the camp, then he can move into the camp
+                        allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
+                                this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
+                    }
+
+                } else {
+                    // If in the cell is a camp, then I can move into it (I add it into the possible actions)
+                    allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
+                            this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
+                }
+            }
+        }
+
+
     }
 
     @Override

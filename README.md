@@ -15,6 +15,12 @@ Run the server in a shell using the following command:
 gradle Server
 ```
 
+To see the GUI , run the server using this command:
+```
+gradle Server -g true
+```
+
+
 Run the white player in a new shell using this command:
 ```
 gradle MarenTablutAI --args="white 60 127.0.0.1"

@@ -1,6 +1,21 @@
 plugins {
     id 'java'
+    id 'application'
 }
+
+task Server(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = 'it.unibo.ai.didattica.competition.tablut.server.Server'
+    // args "arg1", "arg2"
+}
+
+
+task MarenTablutAI(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = 'it.unibo.ai.didattica.competition.tablut.maren.client.MarenTablutAIClient'
+    // args "arg1", "arg2"
+}
+
 
 group 'org.example'
 version '1.0-SNAPSHOT'

@@ -19,16 +19,16 @@ public class BackgroundTablut extends Background {
 		super();
 		try
 		{
-			InputStream input = Gui.class.getResourceAsStream("resources/board2.png");
+			InputStream input = Gui.class.getClassLoader().getResourceAsStream("board2.png");
 			super.background = ImageIO.read(input);
 			super.background = super.background.getScaledInstance(355,360,Image.SCALE_DEFAULT);
-			input = Gui.class.getResourceAsStream("resources/black3.png");
+			input = Gui.class.getClassLoader().getResourceAsStream("black3.png");
 			super.black = ImageIO.read(input);
 			super.black = super.black.getScaledInstance(34, 34, Image.SCALE_DEFAULT);
-			input = Gui.class.getResourceAsStream("resources/White1.png");
+			input = Gui.class.getClassLoader().getResourceAsStream("White1.png");
 			super.white = ImageIO.read(input);
 			super.white = super.white.getScaledInstance(32, 32, Image.SCALE_DEFAULT);
-			input = Gui.class.getResourceAsStream("resources/ImmagineRe.png");
+			input = Gui.class.getClassLoader().getResourceAsStream("ImmagineRe.png");
 			super.king = ImageIO.read(input);
 			super.king = super.king.getScaledInstance(32, 32, Image.SCALE_DEFAULT);
 		}

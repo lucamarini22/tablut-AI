@@ -125,7 +125,7 @@ public class Server implements Runnable {
 		int repeated = 0;
 		int errors = 0;
 		int gameChosen = 4;
-		boolean enableGui = true;
+		boolean enableGui = false;
 
 		CommandLineParser parser = new DefaultParser();
 

@@ -43,7 +43,7 @@ public abstract class State {
 	 *
 	 */
 	public enum Pawn {
-		EMPTY("O"), WHITE("W"), BLACK("B"), THRONE("T"), KING("K");
+		EMPTY("O"), WHITE("W"), BLACK("B"), THRONE("T"), KING("K"), NULL("N");
 		private final String pawn;
 
 		private Pawn(String s) {

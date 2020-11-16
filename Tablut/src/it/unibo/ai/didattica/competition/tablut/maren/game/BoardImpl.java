@@ -105,7 +105,7 @@ public class BoardImpl implements Board{
         if (!(row < 0 || col < 0 || row > WIDTH - 1 || col > WIDTH - 1)) {
             return this.board[row][col];
         }
-        return null;
+        return State.Pawn.NULL;
     }
 
     @Override

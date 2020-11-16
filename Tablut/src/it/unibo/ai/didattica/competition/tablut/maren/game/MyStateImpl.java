@@ -5,9 +5,11 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class MyStateImpl implements MyState {
 
+    private static final int NUM_OF_NEIGHBOURS = 4;
     private Board board;
     private State.Turn turn;
     private int currentDepth;
@@ -153,7 +155,7 @@ public class MyStateImpl implements MyState {
                 this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
                 this.setTurn(State.Turn.WHITE);
             }
-            this.applyCapture(action);
+            this.applyAnyCapture(action);
         }
 
     }
@@ -205,9 +207,42 @@ public class MyStateImpl implements MyState {
         }
     }
 
-    private void applyCapture(MyAction action) {
+    private void applyAnyCapture(MyAction action) {
+        int rowTo = action.getRowTo();
+        int colTo = action.getColumnTo();
 
-    };
+        if (this.isWhiteTurn()) {
+            standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
+
+
+        } else {
+            standardCapture(rowTo, colTo, State.Pawn.BLACK, State.Pawn.WHITE);
+
+        }
+    }
+
+    private void standardCapture(int rowTo, int colTo, State.Pawn myPawnType, State.Pawn enemyPawnType) {
+        // Right standard capture
+        if (this.board.getCell(rowTo, colTo + 1).equals(enemyPawnType)
+                && this.board.getCell(rowTo, colTo + 2).equals(myPawnType)) {
+            this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
+        }
+        // Left standard capture
+        if (this.board.getCell(rowTo, colTo - 1).equals(enemyPawnType)
+                && this.board.getCell(rowTo, colTo - 2).equals(myPawnType)) {
+            this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
+        }
+        // Down standard capture
+        if (this.board.getCell(rowTo + 1, colTo).equals(enemyPawnType)
+                && this.board.getCell(rowTo + 2, colTo).equals(myPawnType)) {
+            this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
+        }
+        // Up standard capture
+        if (this.board.getCell(rowTo - 1, colTo).equals(enemyPawnType)
+                && this.board.getCell(rowTo - 2, colTo).equals(myPawnType)) {
+            this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
+        }
+    }
 
     @Override
     public int getCurrentDepth() {

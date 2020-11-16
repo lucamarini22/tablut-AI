@@ -2,21 +2,13 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 import it.unibo.ai.didattica.competition.tablut.domain.StateTablut;
-
-import java.io.IOException;
-import java.io.Serializable;
 import java.security.InvalidParameterException;
-
 
 public class MyActionImpl implements MyAction {
 
-
-
     private static final long serialVersionUID = 1L;
-
     private String from;
     private String to;
-
     private State.Turn turn;
 
     public MyActionImpl(String from, String to, StateTablut.Turn t) {

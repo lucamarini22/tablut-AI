@@ -1,11 +1,7 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
-import java.util.LinkedList;
 import java.util.List;
-import aima.core.search.adversarial.Game;
-import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 
 public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
@@ -55,6 +51,5 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     public void setCurrentDepth(MyState myState, int depth) {
          myState.setCurrentDepth(depth);
     }
-
 
 }

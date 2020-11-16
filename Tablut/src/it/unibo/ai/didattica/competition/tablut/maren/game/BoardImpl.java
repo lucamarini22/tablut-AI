@@ -2,27 +2,24 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 import java.util.*;
 import java.util.stream.IntStream;
 
 public class BoardImpl implements Board{
+
     private static final int WIDTH = 9;
     private static final int KING_X = 4;
     private static final int KING_Y = 4;
     private static final int NUM_OF_WHITES_PER_ROW = 4;
-
     private static final LinkedList<Integer> WHITE_POS = new LinkedList<>(Arrays.asList(2, 3, 5, 6));
     private static final LinkedList<Integer> BLACK_EDGES_1 = new LinkedList<>(Arrays.asList(3, 4, 5));
     private static final LinkedList<Integer> BLACK_EDGES_2 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> INTERNAL_BLACK_1 = new LinkedList<>(Arrays.asList(1, 7));
     private static final int INTERNAL_BLACK_2 = 4;
-
     private static final LinkedList<Integer> CAMP_EDGES_1 = new LinkedList<>(Arrays.asList(3, 4, 5));
     private static final LinkedList<Integer> CAMP_EDGES_2 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> INTERNAL_CAMP_1 = new LinkedList<>(Arrays.asList(1, 7));
     private static final int INTERNAL_CAMP_2 = 4;
-
     private static final LinkedList<Integer> ESCAPES_1 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> ESCAPES_2 = new LinkedList<>(Arrays.asList(1, 2, 6, 7));
 
@@ -30,11 +27,7 @@ public class BoardImpl implements Board{
     private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();
             private List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
     private List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
-
     private final HashMap<Integer, String> intLetterMap = new HashMap<>();
-
-
-
 
     public BoardImpl() {
         this.initializeBoard();
@@ -66,39 +59,11 @@ public class BoardImpl implements Board{
         });
 
         this.setCell(KING_X, KING_Y, State.Pawn.THRONE);
-
-        // this.turn = State.Turn.BLACK;
-
         this.setCell(KING_X, KING_Y, State.Pawn.KING);
         this.setInitialWhitePositions();
         this.setInitialBlackPositions();
         this.setSpecialSquares();
         this.initializeIntToLetterMap();
-
-        /*this.board[2][4] = State.Pawn.WHITE;
-        this.board[3][4] = State.Pawn.WHITE;
-        this.board[5][4] = State.Pawn.WHITE;
-        this.board[6][4] = State.Pawn.WHITE;
-        this.board[4][2] = State.Pawn.WHITE;
-        this.board[4][3] = State.Pawn.WHITE;
-        this.board[4][5] = State.Pawn.WHITE;
-        this.board[4][6] = State.Pawn.WHITE;*/
-        /*this.board[0][3] = State.Pawn.BLACK;
-        this.board[0][4] = State.Pawn.BLACK;
-        this.board[0][5] = State.Pawn.BLACK;
-        this.board[1][4] = State.Pawn.BLACK;
-        this.board[8][3] = State.Pawn.BLACK;
-        this.board[8][4] = State.Pawn.BLACK;
-        this.board[8][5] = State.Pawn.BLACK;
-        this.board[7][4] = State.Pawn.BLACK;
-        this.board[3][0] = State.Pawn.BLACK;
-        this.board[4][0] = State.Pawn.BLACK;
-        this.board[5][0] = State.Pawn.BLACK;
-        this.board[4][1] = State.Pawn.BLACK;
-        this.board[3][8] = State.Pawn.BLACK;
-        this.board[4][8] = State.Pawn.BLACK;
-        this.board[5][8] = State.Pawn.BLACK;
-        this.board[4][7] = State.Pawn.BLACK;*/
     }
 
     public State.Pawn getCell(int row, int col) {
@@ -293,7 +258,6 @@ public class BoardImpl implements Board{
                 this.specialSquares.put(new Pair<>(e2, e1), BoardImpl.SquareType.ESCAPE);
             }));
         });
-
         // Set camps
         CAMP_EDGES_1.forEach((c_edge_1) ->
                 CAMP_EDGES_2.forEach((c_edge_2) -> {
@@ -304,7 +268,6 @@ public class BoardImpl implements Board{
             this.specialSquares.put(new Pair<>(i_c_1, INTERNAL_CAMP_2), BoardImpl.SquareType.CAMP);
             this.specialSquares.put(new Pair<>(INTERNAL_CAMP_2, i_c_1), BoardImpl.SquareType.CAMP);
         });
-
         // Set the castle
         this.specialSquares.put(new Pair<>(KING_X, KING_Y), BoardImpl.SquareType.CASTLE);
     }
@@ -323,6 +286,5 @@ public class BoardImpl implements Board{
         IntStream.range(0, WIDTH).forEach((num) -> {
             this.intLetterMap.put(num, letters.get(num));
         });
-
     }
 }

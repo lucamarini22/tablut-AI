@@ -39,7 +39,6 @@ public interface Board {
 
     List<Pair<Integer, Integer>> getBlackPositionsFromBoard(State.Pawn[][] board);
 
-
     boolean isCamp(int row, int col);
 
     boolean isEscape(int row, int col);
@@ -56,11 +55,4 @@ public interface Board {
 
     void printBoard();
 
-
-
-    // changeWhitePos -> cambia la posizione del bianco sia nella Pawn[][] che nella lista delle pos dei bianchi ?
-
-    // changeBlackPos -> "  "   "       "      " nero   "       "               "                   "  " neri ?
-
-    // boolean canMoveInto(int row, int col) -> va in myState
 }

@@ -2,10 +2,8 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class MyStateImpl implements MyState {
 
@@ -61,7 +59,6 @@ public class MyStateImpl implements MyState {
         this.board.printBoard();
     }
 
-
     @Override
     public State.Turn getTurn() {
         return this.turn;
@@ -71,7 +68,6 @@ public class MyStateImpl implements MyState {
     public void setTurn(State.Turn turn) {
         this.turn = turn;
     }
-
 
     @Override
     public List<MyAction> getPossibleActions() {
@@ -124,9 +120,7 @@ public class MyStateImpl implements MyState {
                 List<Pair<Integer, Integer>> vertDownCells = this.board.getVerticalDownCells(bp.getFirst(), bp.getSecond());
                 this.addAllPossibleBlackActionsInOneDirection(allPossibleActions, vertDownCells, bp);
             });
-
         }
-
         // Print all the possible positions
         // allPossibleActions.forEach(System.out::println);
         //System.out.println(allPossibleActions.size());
@@ -157,7 +151,6 @@ public class MyStateImpl implements MyState {
             }
             this.applyAnyCapture(action);
         }
-
     }
 
     private boolean isWhiteTurn() {
@@ -189,7 +182,6 @@ public class MyStateImpl implements MyState {
             }
             // If the cell is not a castle
             if ( (! this.board.isCastle(cell.getFirst(), cell.getSecond()))) {
-
                 if (this.board.isCamp(cell.getFirst(), cell.getSecond())) {
                     // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
                     if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
@@ -197,7 +189,6 @@ public class MyStateImpl implements MyState {
                         allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
                                 this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
                     }
-
                 } else {
                     // If in the cell is a camp, then I can move into it (I add it into the possible actions)
                     allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
@@ -216,8 +207,6 @@ public class MyStateImpl implements MyState {
         if (this.isWhiteTurn()) {
             standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
             castleOrCampCapture(rowFrom, colFrom, rowTo,colTo, State.Pawn.BLACK);
-
-
         } else {
             standardCapture(rowTo, colTo, State.Pawn.BLACK, State.Pawn.WHITE);
             castleOrCampCapture(rowFrom, colFrom, rowTo,colTo, State.Pawn.WHITE);
@@ -281,7 +270,6 @@ public class MyStateImpl implements MyState {
                         || this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CASTLE) )  ) {
                     // There are an enemy and a camp or a castle, therefore it's a capture
                     this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
-
                 }
             } else {
                 // Up move
@@ -290,7 +278,6 @@ public class MyStateImpl implements MyState {
                         || this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CASTLE) )  ) {
                     // There are an enemy and a camp or a castle, therefore it's a capture
                     this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
-
                 }
             }
         }

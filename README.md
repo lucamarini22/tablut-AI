@@ -47,22 +47,22 @@ Go into the project folder:
 cd TablutAI/Tablut
 ```
 
-Run the server in a shell using the following command:
+Run the **server** in a shell using the following command:
 ```
 gradle Server
 ```
 
-To see the GUI , run the server using this command:
+To see the **GUI** , run the server using this command:
 ```
 gradle Server --args="-g true"
 ```
 
 
-Run the white player in a new shell using this command:
+Run the **white player** in a new shell using this command:
 ```
 gradle MarenTablutAI --args="white 60 127.0.0.1"
 ```
-Then, run the black player in a new shell using this command:
+Then, run the **black player** in a new shell using this command:
 ```
 gradle MarenTablutAI --args="black 60 127.0.0.1"
 ```

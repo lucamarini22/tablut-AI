@@ -57,11 +57,6 @@ public class MyStateImpl implements MyState {
 
     public void printBoard() {
         this.board.printBoard();
-
-        /*List<Pair<Integer, Integer>> list = this.board.getWhitePositions();
-        for (Pair<Integer, Integer> pos : list) {
-            System.out.println(pos);
-        }*/
     }
 
 
@@ -158,7 +153,7 @@ public class MyStateImpl implements MyState {
                 this.board.setCell(action.getRowFrom(), action.getColumnFrom(), State.Pawn.EMPTY);
                 this.setTurn(State.Turn.WHITE);
             }
-            this.applyCapture();
+            this.applyCapture(action);
         }
 
     }
@@ -210,7 +205,7 @@ public class MyStateImpl implements MyState {
         }
     }
 
-    private void applyCapture() {
+    private void applyCapture(MyAction action) {
 
     };
 

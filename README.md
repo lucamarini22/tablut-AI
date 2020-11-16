@@ -4,10 +4,33 @@ Install Gradle.
 
 Gradle Installation: https://gradle.org/install/
 
+### Gradle Installation on Debian
+
+sudo apt update
+sudo apt install default-jdk
+
+sudo apt install curl
+
+sudo apt install zip
+
+curl -s "https://get.sdkman.io" | bash
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install gradle
+
+
+### Run MarenTablutAI
+
+Clone this project:
+```
+git clone https://github.com/lucamarini22/TablutAI
+```
+
 
 Go into the project folder:
 ```
-cd TablutCompetition/Tablut
+cd TablutAI/Tablut
 ```
 
 Run the server in a shell using the following command:

@@ -1,26 +1,40 @@
 # TablutAI
 
-Install Gradle.
+First install Gradle
 
 Gradle Installation: https://gradle.org/install/
 
 ### Gradle Installation on Debian
 
+```
 sudo apt update
+```
+
+```
 sudo apt install default-jdk
+```
 
+```
 sudo apt install curl
+```
 
+```
 sudo apt install zip
+```
 
+```
 curl -s "https://get.sdkman.io" | bash
+```
 
+```
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
 
+```
 sdk install gradle
+```
 
-
-### Run MarenTablutAI
+### Import and run MarenTablutAI
 
 Clone this project:
 ```

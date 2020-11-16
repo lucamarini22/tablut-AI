@@ -43,9 +43,9 @@ public class BoardImpl implements Board{
     public enum SquareType {
         CASTLE,
         CAMP,
-        ESCAPE
+        ESCAPE,
+        NULLTYPE
     }
-
 
     public void printBoard() {
         for(int i=0; i < this.getBoard().length; i++) {
@@ -110,7 +110,11 @@ public class BoardImpl implements Board{
 
     @Override
     public SquareType getSquareType(int row, int col) {
-        return this.specialSquares.get(new Pair<>(row, col));
+        SquareType squareType = this.specialSquares.get(new Pair<>(row, col));
+        if (squareType == null) {
+            return  SquareType.NULLTYPE;
+        }
+        return squareType;
     }
 
     public void setCell(int row, int col, State.Pawn p) {

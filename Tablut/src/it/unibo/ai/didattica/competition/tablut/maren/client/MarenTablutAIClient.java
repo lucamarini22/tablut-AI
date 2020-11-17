@@ -55,6 +55,7 @@ public class MarenTablutAIClient extends TablutClient {
             System.out.println(state.toString());
             myState.printBoard();
 
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ignored) {

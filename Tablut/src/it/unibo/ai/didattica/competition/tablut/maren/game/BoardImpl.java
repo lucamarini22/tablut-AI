@@ -49,6 +49,35 @@ public class BoardImpl implements Board{
         }
     }
 
+    @Override
+    public int getNumOf(State.Pawn pawnType) {
+        return (int) Arrays.stream(this.board).flatMap(Arrays::stream).filter((p) -> p.equals(pawnType)).count();
+    }
+
+    @Override
+    public Pair<Integer, Integer> getKingPosition() {
+        int row;
+        int col = 0;
+        for (row = 0; row < WIDTH; row++) {
+            for (col = 0; col < WIDTH; col++) {
+                if( this.getCell(row, col).equals(State.Pawn.KING)) {
+                    return new Pair<>(row, col);
+                }
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean isKingOnEscape() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        if (kingPos != null) {
+            return this.getSquareType(kingPos.getFirst(), kingPos.getSecond()).equals(SquareType.ESCAPE);
+        } else {
+            return false;
+        }
+    }
+
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 
@@ -273,7 +302,7 @@ public class BoardImpl implements Board{
     }
 
     private void initializeIntToLetterMap() {
-        List<String> letters = new ArrayList<String>();
+        List<String> letters = new ArrayList<>();
         letters.add("A");
         letters.add("B");
         letters.add("C");

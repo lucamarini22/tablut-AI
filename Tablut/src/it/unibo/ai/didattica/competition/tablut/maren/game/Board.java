@@ -55,4 +55,10 @@ public interface Board {
 
     void printBoard();
 
+    int getNumOf(State.Pawn pawnType);
+
+    Pair<Integer, Integer> getKingPosition();
+
+    boolean isKingOnEscape();
+
 }

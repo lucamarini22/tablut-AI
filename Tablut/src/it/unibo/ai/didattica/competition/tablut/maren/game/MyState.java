@@ -1,5 +1,6 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
+import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 
@@ -26,5 +27,12 @@ public interface MyState {
     void applyAction(MyAction action);
 
     void printBoard();
+
+    boolean isWhiteTurn();
+
+    int getNumOf(State.Pawn pawnType);
+
+    int whiteWon();
+
 
 }

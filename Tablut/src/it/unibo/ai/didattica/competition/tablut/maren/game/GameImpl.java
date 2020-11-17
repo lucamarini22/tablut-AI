@@ -45,6 +45,15 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
+        if (turn.equals(State.Turn.WHITE)) {
+            return 2000000 * myState.whiteWon() +
+                    1000 * myState.getNumOf(State.Pawn.WHITE) +
+                    - 20000 * myState.getNumOf(State.Pawn.BLACK);
+        } else if (turn.equals(State.Turn.BLACK)) {
+            return -1 * myState.getNumOf(State.Pawn.WHITE) +
+                    20000 * myState.getNumOf(State.Pawn.BLACK) +
+                    -20000 * myState.whiteWon();
+        }
         return 0;
     }
 

@@ -4,6 +4,7 @@ package it.unibo.ai.didattica.competition.tablut.maren.logic;
 import aima.core.search.adversarial.AdversarialSearch;
 import aima.core.search.adversarial.Game;
 import aima.core.search.framework.Metrics;
+import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyGame;
 
 /**
@@ -91,8 +92,9 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
         for (A action : game.getActions(state)) {
             value = Math.max(value, minValue( //
                     game.getResult(state, action), player, alpha, beta, depth - 1));
-            if (value >= beta)
+            if (value >= beta) {
                 return value;
+            }
             alpha = Math.max(alpha, value);
         }
         return value;
@@ -101,17 +103,19 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
     public double minValue(S state, P player, double alpha, double beta, int depth) {
         metrics.incrementInt(METRICS_NODES_EXPANDED);
         this.game.setCurrentDepth(state, depth);
-        if (game.isTerminal(state))
+        if (game.isTerminal(state)) {
             return game.getUtility(state, player);
+        }
         double value = Double.POSITIVE_INFINITY;
         for (A action : game.getActions(state)) {
             value = Math.min(value, maxValue( //
                     game.getResult(state, action), player, alpha, beta, depth - 1));
-            if (value <= alpha)
+            if (value <= alpha && (value != Double.NEGATIVE_INFINITY)) {
                 return value;
+            }
             beta = Math.min(beta, value);
         }
-        return value;
+        return value != Double.NEGATIVE_INFINITY? value : 0;
     }
 
     @Override

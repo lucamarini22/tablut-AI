@@ -9,6 +9,8 @@ public class MyStateImpl implements MyState {
 
     private static final int NUM_OF_NEIGHBOURS = 4;
     private static final int WIDTH = 9;
+    private static final int KING_X = 4;
+    private static final int KING_Y = 4;
     private Board board;
     private State.Turn turn;
     private int currentDepth;
@@ -220,11 +222,11 @@ public class MyStateImpl implements MyState {
         int colFrom = action.getColumnFrom();
 
         if (this.isWhiteTurn()) {
-            standardCapture(rowTo, colTo, State.Pawn.BLACK, State.Pawn.WHITE);
-            castleOrCampCapture(rowFrom, colFrom, rowTo, colTo, State.Pawn.WHITE);
+            this.standardCapture(rowTo, colTo, State.Pawn.BLACK, State.Pawn.WHITE);
+            this.castleOrCampCapture(rowFrom, colFrom, rowTo, colTo, State.Pawn.WHITE);
         } else {
-            standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
-            castleOrCampCapture(rowFrom, colFrom, rowTo, colTo, State.Pawn.BLACK);
+            this.standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
+            this.castleOrCampCapture(rowFrom, colFrom, rowTo, colTo, State.Pawn.BLACK);
 
 
         }
@@ -234,28 +236,28 @@ public class MyStateImpl implements MyState {
     private void standardCapture(int rowTo, int colTo, State.Pawn myPawnType, State.Pawn enemyPawnType) {
         // Right standard capture
         if ( (this.board.getCell(rowTo, colTo + 1).equals(enemyPawnType)
-                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo, colTo + 1).equals(State.Pawn.KING)) ) )
+                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo, colTo + 1).equals(State.Pawn.KING)) && !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) ) )
                 && ( this.board.getCell(rowTo, colTo + 2).equals(myPawnType)
                 || ( myPawnType.equals(State.Pawn.WHITE) && this.board.getCell(rowTo, colTo + 2).equals(State.Pawn.KING)) ) ) {
             this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
         }
         // Left standard capture
         if ( (this.board.getCell(rowTo, colTo - 1).equals(enemyPawnType)
-                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo, colTo - 1).equals(State.Pawn.KING)) ) )
+                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo, colTo - 1).equals(State.Pawn.KING)) && !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) ) )
                 && ( this.board.getCell(rowTo, colTo - 2).equals(myPawnType)
                 || ( myPawnType.equals(State.Pawn.WHITE) && this.board.getCell(rowTo, colTo - 2).equals(State.Pawn.KING)) ) ) {
             this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
         }
         // Down standard capture
         if ( (this.board.getCell(rowTo + 1, colTo).equals(enemyPawnType)
-                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo + 1, colTo).equals(State.Pawn.KING)) ) )
+                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo + 1, colTo).equals(State.Pawn.KING)) && !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) ) )
                 && ( this.board.getCell(rowTo + 2, colTo).equals(myPawnType)
                 || ( myPawnType.equals(State.Pawn.WHITE) && this.board.getCell(rowTo + 2, colTo).equals(State.Pawn.KING)) ) ) {
             this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
         }
         // Up standard capture
         if ( (this.board.getCell(rowTo - 1, colTo).equals(enemyPawnType)
-                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo - 1, colTo).equals(State.Pawn.KING)) ) )
+                || ( (myPawnType.equals(State.Pawn.BLACK) && this.board.getCell(rowTo - 1, colTo).equals(State.Pawn.KING)) && !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) ) )
                 && ( this.board.getCell(rowTo - 2, colTo).equals(myPawnType)
                 || ( myPawnType.equals(State.Pawn.WHITE) && this.board.getCell(rowTo - 2, colTo).equals(State.Pawn.KING)) ) ) {
             this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
@@ -263,46 +265,36 @@ public class MyStateImpl implements MyState {
     }
 
     private void castleOrCampCapture(int rowFrom, int colFrom, int rowTo, int colTo, State.Pawn enemyPawnType) {
-        int distX = colTo - colFrom;
-        int distY = rowTo - rowFrom;
-        // Horizontal move
-        if (distX != 0) {
-            if (distX > 0) {
-                // Right move
-                if (this.board.getCell(rowTo, colTo + 1).equals(enemyPawnType)
-                        && ( this.board.getSquareType(rowTo, colTo + 2).equals(BoardImpl.SquareType.CAMP)
-                            || this.board.getSquareType(rowTo, colTo + 2).equals(BoardImpl.SquareType.CASTLE) )  ) {
-                    // There are an enemy and a camp or a castle, therefore it's a capture
-                    this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
-                }
-            } else {
-                // Left move
-                if (this.board.getCell(rowTo, colTo - 1).equals(enemyPawnType)
-                        && ( this.board.getSquareType(rowTo, colTo - 2).equals(BoardImpl.SquareType.CAMP)
-                        || this.board.getSquareType(rowTo, colTo - 2).equals(BoardImpl.SquareType.CASTLE) )  ) {
-                    // There are an enemy and a camp or a castle, therefore it's a capture
-                    this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
-                }
+        // Right camp capture
+        if ( (this.board.getSquareType(rowTo, colTo + 1)) != null && (this.board.getSquareType(rowTo, colTo + 2) != null) ) {
+            if (this.board.getCell(rowTo, colTo + 1).equals(enemyPawnType)
+                    && (!(this.board.getSquareType(rowTo, colTo + 1).equals(BoardImpl.SquareType.CAMP)))
+                    && (this.board.getSquareType(rowTo, colTo + 2).equals(BoardImpl.SquareType.CAMP) || (this.board.getSquareType(rowTo, colTo + 2).equals(BoardImpl.SquareType.CASTLE) ) ) ) {
+                this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
             }
         }
-        // Vertical move
-        if (distY != 0) {
-            if (distY > 0) {
-                // Down move
-                if (this.board.getCell(rowTo + 1, colTo).equals(enemyPawnType)
-                        && ( this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CAMP)
-                        || this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CASTLE) )  ) {
-                    // There are an enemy and a camp or a castle, therefore it's a capture
-                    this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
-                }
-            } else {
-                // Up move
-                if (this.board.getCell(rowTo - 1, colTo).equals(enemyPawnType)
-                        && ( this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CAMP)
-                        || this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CASTLE) )  ) {
-                    // There are an enemy and a camp or a castle, therefore it's a capture
-                    this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
-                }
+        // Left camp capture
+        if ( (this.board.getSquareType(rowTo, colTo - 1)) != null && (this.board.getSquareType(rowTo, colTo - 2) != null) ) {
+            if (this.board.getCell(rowTo, colTo - 1).equals(enemyPawnType)
+                && (!(this.board.getSquareType(rowTo, colTo - 1).equals(BoardImpl.SquareType.CAMP)))
+                && (this.board.getSquareType(rowTo, colTo - 2).equals(BoardImpl.SquareType.CAMP) || (this.board.getSquareType(rowTo, colTo - 2).equals(BoardImpl.SquareType.CASTLE) ) ) ) {
+                this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
+            }
+        }
+        // Down camp capture
+        if ( (this.board.getSquareType(rowTo + 1, colTo)) != null && (this.board.getSquareType(rowTo + 2, colTo) != null) ) {
+            if (this.board.getCell(rowTo + 1, colTo).equals(enemyPawnType)
+                && (!(this.board.getSquareType(rowTo + 1, colTo).equals(BoardImpl.SquareType.CAMP)))
+                && (this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CAMP) || (this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CASTLE) ) ) ) {
+                this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
+            }
+        }
+        // Up camp capture
+        if ( (this.board.getSquareType(rowTo - 1, colTo)) != null && (this.board.getSquareType(rowTo - 2, colTo) != null) ) {
+            if (this.board.getCell(rowTo - 1, colTo).equals(enemyPawnType)
+                && (!(this.board.getSquareType(rowTo - 1, colTo).equals(BoardImpl.SquareType.CAMP)))
+                && (this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CAMP) || (this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CASTLE) ) ) ) {
+                this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
             }
         }
     }

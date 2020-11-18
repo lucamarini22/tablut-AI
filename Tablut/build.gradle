@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
     id 'application'
@@ -17,8 +18,8 @@ task MarenTablutAI(type: JavaExec) {
 }
 
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'maren'
+version 'MarenAI'
 
 repositories {
     mavenCentral()
@@ -30,11 +31,43 @@ sourceSets {
         }
     }
 }
+
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
+
 dependencies {
     compile 'junit:junit:4.12'
+    extraLibs group: 'net.java.dev.jna', name: 'jna-platform', version: '4.2.2'
     implementation 'com.googlecode.aima-java:aima-core:3.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    configurations.compile.extendsFrom(configurations.extraLibs)
+
 
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'it.unibo.ai.didattica.competition.tablut.maren.client.MarenTablutAIClient'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+/*
+jar {
+    manifest {
+        attributes "Main-Class": "it.unibo.ai.didattica.competition.tablut.maren.client.MarenTablutAIClient"
+    }
+
+    from {
+        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+*/
+
 

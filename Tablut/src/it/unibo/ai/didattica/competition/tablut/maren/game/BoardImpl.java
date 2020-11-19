@@ -218,22 +218,22 @@ public class BoardImpl implements Board{
 
     @Override
     public boolean isCamp(int row, int col) {
-        return this.getSquareType(row, col) == SquareType.CAMP;
+        return this.getSquareType(row, col).equals(SquareType.CAMP);
     }
 
     @Override
     public boolean isEscape(int row, int col) {
-        return this.getSquareType(row, col) == SquareType.ESCAPE;
+        return this.getSquareType(row, col).equals(SquareType.ESCAPE);
     }
 
     @Override
     public boolean isCastle(int row, int col) {
-        return this.getSquareType(row, col) == SquareType.CASTLE;
+        return this.getSquareType(row, col).equals(SquareType.CASTLE);
     }
 
     @Override
     public boolean isThereAPawn(int row, int col) {
-        return ! (this.getCell(row, col) == State.Pawn.EMPTY);
+        return ! (this.getCell(row, col).equals(State.Pawn.EMPTY));
     }
 
     @Override

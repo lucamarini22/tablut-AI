@@ -77,6 +77,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
             if (value > resultValue) {
                 result = action;
                 resultValue = value;
+                System.out.println("Best current move: " + action);
             }
         }
         return result;

@@ -34,5 +34,7 @@ public interface MyState {
 
     int whiteWon();
 
+    int blackWon();
+
 
 }

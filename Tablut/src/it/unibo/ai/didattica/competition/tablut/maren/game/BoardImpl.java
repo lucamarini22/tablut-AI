@@ -78,6 +78,11 @@ public class BoardImpl implements Board{
         }
     }
 
+    @Override
+    public boolean isKingDead() {
+        return Arrays.stream(this.board).flatMap(Arrays::stream).noneMatch((p) -> p.equals(State.Pawn.KING));
+    }
+
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 

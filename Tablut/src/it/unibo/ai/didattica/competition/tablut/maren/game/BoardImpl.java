@@ -83,6 +83,39 @@ public class BoardImpl implements Board{
         return Arrays.stream(this.board).flatMap(Arrays::stream).noneMatch((p) -> p.equals(State.Pawn.KING));
     }
 
+    @Override
+    public boolean isKingInCastle() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        if (kingPos != null) {
+            return this.getSquareType(kingPos.getFirst(), kingPos.getSecond()).equals(SquareType.CASTLE);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean isKingAdjacentToCamp() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        if (kingPos != null) {
+            int kingX = kingPos.getFirst();
+            int kingY = kingPos.getSecond();
+            return this.getSquareType(kingX, kingY + 1).equals(SquareType.CAMP)
+                    || this.getSquareType(kingX, kingY - 1).equals(SquareType.CAMP)
+                    || this.getSquareType(kingX + 1, kingY).equals(SquareType.CAMP)
+                    || this.getSquareType(kingX - 1, kingY).equals(SquareType.CAMP);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean isKingAdjacentToCastle() {
+        return this.getCell(KING_X - 1, KING_Y).equals(State.Pawn.KING)
+                || this.getCell(KING_X + 1, KING_Y).equals(State.Pawn.KING)
+                || this.getCell(KING_X, KING_Y + 1).equals(State.Pawn.KING)
+                || this.getCell(KING_X, KING_Y - 1).equals(State.Pawn.KING);
+    }
+
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 

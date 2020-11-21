@@ -63,4 +63,10 @@ public interface Board {
 
     boolean isKingDead();
 
+    boolean isKingInCastle();
+
+    boolean isKingAdjacentToCamp();
+
+    boolean isKingAdjacentToCastle();
+
 }

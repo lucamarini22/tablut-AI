@@ -236,7 +236,26 @@ public class MyStateImpl implements MyState {
             // Captures done by black
             this.standardCapture(rowTo, colTo, State.Pawn.BLACK, State.Pawn.WHITE);
             this.castleOrCampCapture(rowTo, colTo, State.Pawn.WHITE);
-            this.captureKingAdjacentToCamp(rowTo, colTo);
+            // Captures of the king, only if the king is still present
+            Pair<Integer, Integer> kingPos = this.board.getKingPosition();
+            if (kingPos != null) {
+                if (this.board.isKingInCastle()) {
+                    // Check captures if the king is inside the castle
+                    this.captureKingInsideCastle();
+                } else {
+                    // Check king captures when the king is not in the castle
+                    if(this.board.isKingAdjacentToCamp()) {
+                        this.standardCaptureOfKing(rowTo, colTo);
+                        this.captureKingAdjacentToCamp(rowTo, colTo);
+                    } else if(this.board.isKingAdjacentToCastle()) {
+                        this.captureKingAdjacentToCastle();
+                    } else {
+                        this.standardCaptureOfKing(rowTo, colTo);
+                    }
+                }
+            }
+
+
         } else {
             // Captures done by white
             this.standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
@@ -334,6 +353,97 @@ public class MyStateImpl implements MyState {
             if ( !(this.board.getSquareType(rowTo - 1, colTo).equals(BoardImpl.SquareType.CAMP)) ) {
                 this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
             }
+        }
+    }
+
+    private void standardCaptureOfKing(int rowTo, int colTo) {
+        // B -> K B capture with king not inside or adjacent to the castle
+        if ( this.board.getCell(rowTo, colTo + 1).equals(State.Pawn.KING)
+                && ( !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) )
+                && this.board.getCell(rowTo, colTo + 2).equals(State.Pawn.BLACK) ) {
+            if ( !(this.board.getSquareType(rowTo - 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE))
+                    && !(this.board.getSquareType(rowTo + 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
+                this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
+            }
+        }
+        // B K <- B capture with king not inside or adjacent to the castle
+        else if ( this.board.getCell(rowTo, colTo - 1).equals(State.Pawn.KING)
+                && ( !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) )
+                && this.board.getCell(rowTo, colTo - 2).equals(State.Pawn.BLACK) ) {
+            if ( !(this.board.getSquareType(rowTo - 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
+                    && !(this.board.getSquareType(rowTo + 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE)) ) {
+                this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
+            }
+        }
+        // B
+        // K
+        // ^
+        // |
+        // B capture with king not inside or adjacent to the castle
+        else if ( this.board.getCell(rowTo + 1, colTo).equals(State.Pawn.KING)
+                && ( !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) )
+                && this.board.getCell(rowTo + 2, colTo).equals(State.Pawn.BLACK) ) {
+            if ( !(this.board.getSquareType(rowTo + 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
+                    && !(this.board.getSquareType(rowTo + 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
+                this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
+            }
+        }
+        // B
+        // |
+        // v
+        // K
+        // B capture with king not inside or adjacent to the castle
+        else if ( this.board.getCell(rowTo - 1, colTo).equals(State.Pawn.KING)
+                && ( !this.board.getCell(KING_X, KING_Y).equals(State.Pawn.KING) )
+                && this.board.getCell(rowTo - 2, colTo).equals(State.Pawn.BLACK) ) {
+            if ( !(this.board.getSquareType(rowTo - 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
+                    && !(this.board.getSquareType(rowTo - 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
+                this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
+            }
+        }
+    }
+
+    private void captureKingAdjacentToCastle() {
+        // King above the castle
+        if(this.board.getCell(KING_X - 1, KING_Y).equals(State.Pawn.KING)) {
+            if(this.board.getCell(KING_X - 2, KING_Y).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X - 1, KING_Y + 1).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X - 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
+                this.board.setCell(KING_X - 1, KING_Y, State.Pawn.EMPTY);
+            }
+        }
+        // King below the castle
+        else if(this.board.getCell(KING_X + 1, KING_Y).equals(State.Pawn.KING)) {
+            if(this.board.getCell(KING_X + 2, KING_Y).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X + 1, KING_Y + 1).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X + 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
+                this.board.setCell(KING_X + 1, KING_Y, State.Pawn.EMPTY);
+            }
+        }
+        // King right to the castle
+        else if(this.board.getCell(KING_X, KING_Y + 1).equals(State.Pawn.KING)) {
+            if(this.board.getCell(KING_X, KING_Y + 2).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X + 1, KING_Y + 1).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X - 1, KING_Y + 1).equals(State.Pawn.BLACK) ) {
+                this.board.setCell(KING_X, KING_Y + 1, State.Pawn.EMPTY);
+            }
+        }
+        // King left to the castle
+        else if(this.board.getCell(KING_X, KING_Y - 1).equals(State.Pawn.KING)) {
+            if(this.board.getCell(KING_X, KING_Y - 2).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X + 1, KING_Y - 1).equals(State.Pawn.BLACK)
+                    && this.board.getCell(KING_X - 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
+                this.board.setCell(KING_X, KING_Y - 1, State.Pawn.EMPTY);
+            }
+        }
+    }
+
+    private void captureKingInsideCastle() {
+        if( this.board.getCell(KING_X - 1, KING_Y).equals(State.Pawn.BLACK)
+                && this.board.getCell(KING_X + 1, KING_Y).equals(State.Pawn.BLACK)
+                && this.board.getCell(KING_X, KING_Y + 1).equals(State.Pawn.BLACK)
+                && this.board.getCell(KING_X, KING_Y - 1).equals(State.Pawn.BLACK) ) {
+            this.board.setCell(KING_X, KING_Y, State.Pawn.EMPTY);
         }
     }
 

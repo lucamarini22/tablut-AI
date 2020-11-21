@@ -36,5 +36,7 @@ public interface MyState {
 
     int blackWon();
 
+    int getDistanceFromKingToEscape();
+
 
 }

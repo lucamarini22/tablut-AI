@@ -116,6 +116,27 @@ public class BoardImpl implements Board{
                 || this.getCell(KING_X, KING_Y - 1).equals(State.Pawn.KING);
     }
 
+    @Override
+    public int getMinManhattanDistanceKingEscape() {
+        if(this.getKingPosition() != null) {
+            List<Integer> manhattanDistances = new ArrayList<>();
+            this.specialSquares.entrySet()
+                    .stream()
+                    .filter(e -> e.getValue().equals(SquareType.ESCAPE))
+                    .forEach((e) -> {
+                        manhattanDistances.add(this.manhattanDistance(this.getKingPosition(), e.getKey()));
+                    });
+            return manhattanDistances.stream().min(Comparator.naturalOrder()).get();
+        }
+        return 100;
+    }
+
+    private int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end) {
+        int dx =  Math.abs(start.getFirst() - end.getFirst());
+        int dy = Math.abs(start.getSecond() - end.getSecond());
+        return dx + dy;
+    }
+
     public void initializeBoard() {
         this.board = new State.Pawn[WIDTH][WIDTH];
 

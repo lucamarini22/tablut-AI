@@ -96,6 +96,11 @@ public class MyStateImpl implements MyState {
         return 0;
     }
 
+    @Override
+    public int getDistanceFromKingToEscape() {
+        return this.board.getMinManhattanDistanceKingEscape();
+    }
+
 
     @Override
     public List<MyAction> getPossibleActions() {

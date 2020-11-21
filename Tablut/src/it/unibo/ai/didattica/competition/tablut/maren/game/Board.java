@@ -69,4 +69,6 @@ public interface Board {
 
     boolean isKingAdjacentToCastle();
 
+    int getMinManhattanDistanceKingEscape();
+
 }

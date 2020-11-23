@@ -7,6 +7,11 @@ import aima.core.search.framework.Metrics;
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyGame;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 /**
  * Artificial Intelligence A Modern Approach (3rd Ed.): Page 173.<br>
  * <p>
@@ -53,6 +58,8 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
     MyGame<S, A, P> game;
     private Metrics metrics = new Metrics();
     private final int depth;
+    private final Random rand = new Random();
+
 
 
     /**
@@ -66,6 +73,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
 
     @Override
     public A makeDecision(S state) {
+        final List<A> bestActions = new ArrayList<>();
         metrics = new Metrics();
         A result = null;
         int depth = this.depth;
@@ -74,11 +82,23 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
         for (A action : game.getActions(state)) {
             double value = minValue(game.getResult(state, action), player,
                     Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth - 1);
-            if (value > resultValue) {
-                result = action;
+          //  if (value > resultValue) {
+          //      result = action;
+          //      resultValue = value;
+          //      System.out.println("Best current move: " + action);
+          //  }
+            if (value == resultValue) {
+                bestActions.add(action);
+                System.out.println("Best moves: " + Arrays.toString(bestActions.toArray()));
+            } else if (value > resultValue) {
                 resultValue = value;
-                System.out.println("Best current move: " + action);
+                bestActions.clear();
+                bestActions.add(action);
+                System.out.println("Best moves: " + Arrays.toString(bestActions.toArray()));
             }
+        }
+        if(bestActions.size() > 0) {
+            result = bestActions.get(rand.nextInt(bestActions.size()));
         }
         return result;
     }

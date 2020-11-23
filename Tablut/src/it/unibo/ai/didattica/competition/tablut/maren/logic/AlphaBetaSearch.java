@@ -59,6 +59,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
     private Metrics metrics = new Metrics();
     private final int depth;
     private final Random rand = new Random();
+    private final List<A> bestActions = new ArrayList<>();
 
 
 
@@ -73,7 +74,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
 
     @Override
     public A makeDecision(S state) {
-        final List<A> bestActions = new ArrayList<>();
+        this.bestActions.clear();
         metrics = new Metrics();
         A result = null;
         int depth = this.depth;
@@ -88,17 +89,19 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
           //      System.out.println("Best current move: " + action);
           //  }
             if (value == resultValue) {
-                bestActions.add(action);
-                System.out.println("Best moves: " + Arrays.toString(bestActions.toArray()));
+                this.bestActions.add(action);
+                System.out.println("Best moves: " + Arrays.toString(this.bestActions.toArray()));
+                System.out.println("\n");
             } else if (value > resultValue) {
                 resultValue = value;
-                bestActions.clear();
-                bestActions.add(action);
-                System.out.println("Best moves: " + Arrays.toString(bestActions.toArray()));
+                this.bestActions.clear();
+                this.bestActions.add(action);
+                System.out.println("Best moves: " + Arrays.toString(this.bestActions.toArray()));
+                System.out.println("\n");
             }
         }
-        if(bestActions.size() > 0) {
-            result = bestActions.get(rand.nextInt(bestActions.size()));
+        if(this.bestActions.size() > 0) {
+            result = this.bestActions.get(rand.nextInt(this.bestActions.size()));
         }
         return result;
     }

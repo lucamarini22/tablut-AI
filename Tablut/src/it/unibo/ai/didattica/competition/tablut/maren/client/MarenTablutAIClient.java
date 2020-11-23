@@ -34,10 +34,10 @@ public class MarenTablutAIClient extends TablutClient {
         }
 
         State state;
-        Game rules = null;
+        // Game rules = null;
         state = new StateTablut();
         state.setTurn(State.Turn.WHITE);
-        rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
+        // rules = new GameAshtonTablut(REPEATED_MOVES_ALLOWED, CACHE_SIZE, LOGS_FOLDER, W_B_NAME, W_B_NAME);
         // algorithm = new AlphaBetaSearch(rules);
         System.out.println("You are player " + this.getPlayer().toString() + "!");
         // MyState myState = new MyStateImpl(DEPTH);
@@ -133,7 +133,7 @@ public class MarenTablutAIClient extends TablutClient {
     public static void main(String[] args) throws UnknownHostException, IOException, ClassNotFoundException {
         String role = "";
         String name = "MarenTablutAI";
-        String ipAddress = "localhost";
+        String ipAddress = "";
         int timeout = 0;
 
         if (args.length < 3) {

@@ -67,7 +67,7 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
      * Creates a new search object for a given game.
      */
 
-    public AlphaBetaSearch(MyGame<S, A, P> game, int depth) {
+    public AlphaBetaSearch(MyGame<S, A, P> game, int depth, int timeout) {
         this.game = game;
         this.depth = depth;
     }
@@ -83,11 +83,11 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
         for (A action : game.getActions(state)) {
             double value = minValue(game.getResult(state, action), player,
                     Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth - 1);
-          //  if (value > resultValue) {
-          //      result = action;
-          //      resultValue = value;
-          //      System.out.println("Best current move: " + action);
-          //  }
+            //  if (value > resultValue) {
+            //      result = action;
+            //      resultValue = value;
+            //      System.out.println("Best current move: " + action);
+            //  }
             if (value == resultValue) {
                 this.bestActions.add(action);
                 System.out.println("Best moves: " + Arrays.toString(this.bestActions.toArray()));

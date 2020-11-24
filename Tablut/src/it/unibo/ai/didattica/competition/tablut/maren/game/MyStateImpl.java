@@ -101,6 +101,11 @@ public class MyStateImpl implements MyState {
         return this.board.getMinManhattanDistanceKingEscape();
     }
 
+    @Override
+    public Integer getNumOfOpponentsNextToTheKing(State.Turn player) {
+        return this.board.getNumOfOpponentsAdjacentToTheKing(player);
+    }
+
 
     @Override
     public List<MyAction> getPossibleActions() {

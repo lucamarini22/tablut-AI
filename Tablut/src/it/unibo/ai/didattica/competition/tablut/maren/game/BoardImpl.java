@@ -128,7 +128,51 @@ public class BoardImpl implements Board{
                     });
             return manhattanDistances.stream().min(Comparator.naturalOrder()).get();
         }
-        return 100;
+        return 10;
+    }
+
+    @Override
+    public Integer getNumOfOpponentsAdjacentToTheKing(State.Turn playerType) {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        int numOfOpponents = 0;
+        if (kingPos != null) {
+            if (playerType.equals(State.Turn.WHITE)) {
+                if (this.getCell(kingPos.getFirst() + 1, kingPos.getSecond()).equals(State.Pawn.BLACK)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst() - 1, kingPos.getSecond()).equals(State.Pawn.BLACK)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst(), kingPos.getSecond() + 1).equals(State.Pawn.BLACK)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst(), kingPos.getSecond() - 1).equals(State.Pawn.BLACK)) {
+                    numOfOpponents++;
+                }
+            } else {
+                if (this.getCell(kingPos.getFirst() + 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst() - 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst(), kingPos.getSecond() + 1).equals(State.Pawn.WHITE)) {
+                    numOfOpponents++;
+                }
+                if (this.getCell(kingPos.getFirst(), kingPos.getSecond() - 1).equals(State.Pawn.WHITE)) {
+                    numOfOpponents++;
+                }
+            }
+            return numOfOpponents;
+        } else {
+            // If the king is not present in the board ( => if the king is dead)
+            if (playerType.equals(State.Turn.WHITE)) {
+                return 100;
+            } else {
+                return -100;
+            }
+        }
+
     }
 
     private int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end) {

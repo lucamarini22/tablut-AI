@@ -71,4 +71,6 @@ public interface Board {
 
     int getMinManhattanDistanceKingEscape();
 
+    Integer getNumOfOpponentsAdjacentToTheKing(State.Turn playerType);
+
 }

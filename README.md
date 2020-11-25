@@ -1,6 +1,8 @@
 # MarenTablutAI
 
-
+<p align="center"> 
+   <img src="Tablut/src/main/resources/board-complete.png">
+</p>
 
 
 

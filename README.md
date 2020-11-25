@@ -1,5 +1,10 @@
 # MarenTablutAI
 
+### What is Tablut?
+
+How to play -> [here](https://en.wikipedia.org/wiki/Tafl_games)
+
+
 <p align="center"> 
    <img src="Tablut/src/main/resources/board-complete.png">
 </p>
@@ -8,7 +13,7 @@
 
 ### Run MarenTablutAI
 
-Download the **latest release** [here](https://github.com/lucamarini22/TablutAI/releases)
+Download the **latest release** -> [here](https://github.com/lucamarini22/TablutAI/releases)
 
 and then run:
 `
@@ -34,12 +39,12 @@ Go into the project folder:
 cd TablutAI/Tablut
 ```
 
-Run the **server** in a shell using the following command:
+Run the **server**:
 ```
 gradle Server
 ```
 
-To see the **GUI** , run the server using this command:
+To visualize the **GUI**, run:
 ```
 gradle Server --args="-g true"
 ```

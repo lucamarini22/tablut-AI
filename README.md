@@ -1,5 +1,7 @@
 # MarenTablutAI
 
+MarenTablutAI is an artificial intelligence written in Java that plays Tablut, a variant of the classic Viking boardgame Hnefatafl. 
+
 ### What is Tablut?
 
 How to play -> [here](https://en.wikipedia.org/wiki/Tafl_games)

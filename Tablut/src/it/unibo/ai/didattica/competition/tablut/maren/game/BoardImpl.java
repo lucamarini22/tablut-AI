@@ -22,10 +22,12 @@ public class BoardImpl implements Board{
     private static final int INTERNAL_CAMP_2 = 4;
     private static final LinkedList<Integer> ESCAPES_1 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> ESCAPES_2 = new LinkedList<>(Arrays.asList(1, 2, 6, 7));
+    private static final int MAX_MANHATTAN_DIST_KING_ESCAPE = 10;
+    private static final int WEIGHT_KING_NOT_PRESENT = 100;
 
     private State.Pawn[][] board;
     private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();
-            private List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
+    private List<Pair<Integer, Integer>> whitePos = new ArrayList<>();
     private List<Pair<Integer, Integer>> blackPos = new ArrayList<>();
     private final HashMap<Integer, String> intLetterMap = new HashMap<>();
 
@@ -128,7 +130,7 @@ public class BoardImpl implements Board{
                     });
             return manhattanDistances.stream().min(Comparator.naturalOrder()).get();
         }
-        return 10;
+        return MAX_MANHATTAN_DIST_KING_ESCAPE;
     }
 
     @Override
@@ -167,9 +169,9 @@ public class BoardImpl implements Board{
         } else {
             // If the king is not present in the board ( => if the king is dead)
             if (playerType.equals(State.Turn.WHITE)) {
-                return 100;
+                return WEIGHT_KING_NOT_PRESENT;
             } else {
-                return -100;
+                return - WEIGHT_KING_NOT_PRESENT;
             }
         }
 

@@ -1,8 +1,6 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
-import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 
 import java.util.List;
 
@@ -39,6 +37,5 @@ public interface MyState {
     int getDistanceFromKingToEscape();
 
     Integer getNumOfOpponentsNextToTheKingOf(State.Turn player);
-
 
 }

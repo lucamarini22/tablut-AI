@@ -2,7 +2,6 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 import java.util.List;
 
 public interface Board {
@@ -73,6 +72,6 @@ public interface Board {
 
     Integer getNumOfOpponentsAdjacentToTheKingOf(State.Turn playerType);
 
-    public int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end);
+    int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end);
 
 }

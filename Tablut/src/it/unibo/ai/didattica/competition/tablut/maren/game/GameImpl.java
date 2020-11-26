@@ -51,8 +51,7 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     - 100000 * myState.getNumOf(State.Pawn.BLACK)
                     - 100 * myState.getDistanceFromKingToEscape()
                     - 20000000 * myState.blackWon()
-                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE)
-                    + 10000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
+                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE);
             /*return 50000 * myState.whiteWon() +
                     250 * myState.getNumOf(State.Pawn.WHITE) +
                     - 164 * myState.getNumOf(State.Pawn.BLACK)

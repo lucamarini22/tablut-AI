@@ -1,12 +1,10 @@
 package it.unibo.ai.didattica.competition.tablut.maren.logic;
 
-
 import aima.core.search.adversarial.AdversarialSearch;
 import aima.core.search.adversarial.Game;
 import aima.core.search.framework.Metrics;
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyGame;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -61,8 +59,6 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
     private final Random rand = new Random();
     private final List<A> bestActions = new ArrayList<>();
 
-
-
     /**
      * Creates a new search object for a given game.
      */
@@ -83,11 +79,6 @@ public class AlphaBetaSearch<S, A, P> implements AdversarialSearch<S, A> {
         for (A action : game.getActions(state)) {
             double value = minValue(game.getResult(state, action), player,
                     Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth - 1);
-            //  if (value > resultValue) {
-            //      result = action;
-            //      resultValue = value;
-            //      System.out.println("Best current move: " + action);
-            //  }
             if (value == resultValue) {
                 this.bestActions.add(action);
                 System.out.println("Best moves: " + Arrays.toString(this.bestActions.toArray()));

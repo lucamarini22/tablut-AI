@@ -132,7 +132,7 @@ public class BoardImpl implements Board{
     }
 
     @Override
-    public Integer getNumOfOpponentsAdjacentToTheKing(State.Turn playerType) {
+    public Integer getNumOfOpponentsAdjacentToTheKingOf(State.Turn playerType) {
         Pair<Integer, Integer> kingPos = this.getKingPosition();
         int numOfOpponents = 0;
         if (kingPos != null) {
@@ -175,7 +175,7 @@ public class BoardImpl implements Board{
 
     }
 
-    private int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end) {
+    public int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end) {
         int dx =  Math.abs(start.getFirst() - end.getFirst());
         int dy = Math.abs(start.getSecond() - end.getSecond());
         return dx + dy;

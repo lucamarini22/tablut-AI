@@ -46,18 +46,19 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
         if (turn.equals(State.Turn.WHITE)) {
-            /*return 2000000000 * myState.whiteWon() +
+            return 2000000000 * myState.whiteWon() +
                     200000 * myState.getNumOf(State.Pawn.WHITE) +
-                    - 50000 * myState.getNumOf(State.Pawn.BLACK)
-                    - 1000 * myState.getDistanceFromKingToEscape()
+                    - 100000 * myState.getNumOf(State.Pawn.BLACK)
+                    - 100 * myState.getDistanceFromKingToEscape()
                     - 20000000 * myState.blackWon()
-                    ;//- 10000 * myState.getNumOfOpponentsNextToTheKing(State.Turn.WHITE);*/
-            return 50000 * myState.whiteWon() +
+                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE)
+                    + 10000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
+            /*return 50000 * myState.whiteWon() +
                     250 * myState.getNumOf(State.Pawn.WHITE) +
                     - 164 * myState.getNumOf(State.Pawn.BLACK)
                     - 42 * myState.getDistanceFromKingToEscape()
                     - 5000 * myState.blackWon()
-                    - 147 * myState.getNumOfOpponentsNextToTheKing(State.Turn.WHITE);
+                    - 147 * myState.getNumOfOpponentsNextToTheKing(State.Turn.WHITE);*/
 
         } else if (turn.equals(State.Turn.BLACK)) {
             /*return 2000000000 * myState.blackWon() +
@@ -70,7 +71,7 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     200000 * myState.getNumOf(State.Pawn.BLACK) +
                     100 * myState.getDistanceFromKingToEscape()
                     - 20000000 * myState.whiteWon()
-                    - 50000 * myState.getNumOfOpponentsNextToTheKing(State.Turn.BLACK);
+                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
         }
         return 0;
     }

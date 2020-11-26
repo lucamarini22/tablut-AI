@@ -38,7 +38,7 @@ public interface MyState {
 
     int getDistanceFromKingToEscape();
 
-    Integer getNumOfOpponentsNextToTheKing(State.Turn player);
+    Integer getNumOfOpponentsNextToTheKingOf(State.Turn player);
 
 
 }

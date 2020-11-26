@@ -102,8 +102,8 @@ public class MyStateImpl implements MyState {
     }
 
     @Override
-    public Integer getNumOfOpponentsNextToTheKing(State.Turn player) {
-        return this.board.getNumOfOpponentsAdjacentToTheKing(player);
+    public Integer getNumOfOpponentsNextToTheKingOf(State.Turn player) {
+        return this.board.getNumOfOpponentsAdjacentToTheKingOf(player);
     }
 
 
@@ -205,11 +205,11 @@ public class MyStateImpl implements MyState {
                 break;
             }
             // If the cell is not a castle and it is not a camp
-            if ((!this.board.isCastle(cell.getFirst(), cell.getSecond()))
-                    && (!this.board.isCamp(cell.getFirst(), cell.getSecond()))) {
+            //if ((!this.board.isCastle(cell.getFirst(), cell.getSecond()))
+            //        && (!this.board.isCamp(cell.getFirst(), cell.getSecond()))) {
                 allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(wp.getSecond()) + (wp.getFirst() + 1),
                         this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
-            }
+            //}
         }
     }
 
@@ -217,24 +217,26 @@ public class MyStateImpl implements MyState {
             , Integer>> cellsInDirection, Pair<Integer, Integer> bp){
         for (Pair<Integer, Integer> cell : cellsInDirection) {
             // If there's a Pawn, break and consider the next black Pawn
-            if (this.board.isThereAPawn(cell.getFirst(), cell.getSecond()) || this.board.isCamp(cell.getFirst(), cell.getSecond()) || this.board.isCastle(cell.getFirst(), cell.getSecond())) {
+            if (this.board.isThereAPawn(cell.getFirst(), cell.getSecond()) // || this.board.isCamp(cell.getFirst(), cell.getSecond())
+                 || this.board.isCastle(cell.getFirst(), cell.getSecond())) {
                 break;
             }
             // If the cell is not a castle
-            if ( (! this.board.isCastle(cell.getFirst(), cell.getSecond()))) {
+            //if ( (! this.board.isCastle(cell.getFirst(), cell.getSecond()))) {
                 if (this.board.isCamp(cell.getFirst(), cell.getSecond())) {
                     // If in the cell is a camp, check whether the black Pawn was already outside the Camp or not
-                    if (this.board.isCamp(bp.getFirst(), bp.getSecond())) {
+                    if (this.board.isCamp(bp.getFirst(), bp.getSecond()) && this.board.manhattanDistance(bp, cell) <= 2) {
                         // If the black was already in the camp, then he can move into the camp
                         allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
                                 this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
                     }
+                    break;
                 } else {
                     // If in the cell is a camp, then I can move into it (I add it into the possible actions)
                     allPossibleActions.add(new MyActionImpl(this.board.fromIntToLetter(bp.getSecond()) + (bp.getFirst() + 1),
                             this.board.fromIntToLetter(cell.getSecond()) + (cell.getFirst() + 1), this.getTurn()));
                 }
-            }
+            //}
         }
     }
 

@@ -4,7 +4,7 @@ MarenTablutAI is an artificial intelligence written in Java that plays Tablut, a
 
 ### What is Tablut?
 
-How to play -> [here](https://en.wikipedia.org/wiki/Tafl_games)
+Games's rules [here](https://en.wikipedia.org/wiki/Tafl_games)
 
 
 <p align="center"> 
@@ -15,7 +15,7 @@ How to play -> [here](https://en.wikipedia.org/wiki/Tafl_games)
 
 ### Run MarenTablutAI
 
-Download the **latest release** -> [here](https://github.com/lucamarini22/TablutAI/releases)
+Download the **latest release** [here](https://github.com/lucamarini22/TablutAI/releases)
 
 and then run:
 `

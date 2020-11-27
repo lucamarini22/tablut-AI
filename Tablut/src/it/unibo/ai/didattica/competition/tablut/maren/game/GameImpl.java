@@ -13,6 +13,14 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int B_NUM_OPP_NEXT_KING = - 5000;
 
 
+    private static final int W_WHITE_WON = 200000000;
+    private static final int W_NUM_OF_WHITE = 30000;
+    private static final int W_NUM_OF_BLACK = - 20000;
+    private static final int W_DIST_KING_ESCAPE = - 10;
+    private static final int W_BLACK_WON = - 2000000;
+    private static final int W_NUM_OPP_NEXT_KING = - 1000;
+
+
 
     private final MyState myState;
 
@@ -54,13 +62,14 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
+        // if turn == BLACKWIN or WHITEWIN ?
         if (turn.equals(State.Turn.WHITE)) {
-            return 2000000000 * myState.whiteWon() +
-                    200000 * myState.getNumOf(State.Pawn.WHITE) +
-                    - 100000 * myState.getNumOf(State.Pawn.BLACK)
-                    - 100 * myState.getDistanceFromKingToEscape()
-                    - 20000000 * myState.blackWon()
-                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE);
+            return W_WHITE_WON * myState.whiteWon() +
+                    W_NUM_OF_WHITE * myState.getNumOf(State.Pawn.WHITE) +
+                    W_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
+                    W_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
+                    W_BLACK_WON * myState.blackWon() +
+                    W_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE);
             /*return 50000 * myState.whiteWon() +
                     250 * myState.getNumOf(State.Pawn.WHITE) +
                     - 164 * myState.getNumOf(State.Pawn.BLACK)
@@ -69,11 +78,6 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     - 147 * myState.getNumOfOpponentsNextToTheKing(State.Turn.WHITE);*/
 
         } else if (turn.equals(State.Turn.BLACK)) {
-            /*return 2000000000 * myState.blackWon() +
-                    - 220000 * myState.getNumOf(State.Pawn.WHITE) +
-                    200000 * myState.getNumOf(State.Pawn.BLACK) +
-                    100 * myState.getDistanceFromKingToEscape()
-                    - 2000000000 * myState.whiteWon();*/
             return B_BLACK_WON * myState.blackWon() +
                     B_NUM_OF_WHITE * myState.getNumOf(State.Pawn.WHITE) +
                     B_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +

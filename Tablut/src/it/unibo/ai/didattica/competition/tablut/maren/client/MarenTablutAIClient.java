@@ -16,6 +16,7 @@ public class MarenTablutAIClient extends TablutClient {
         super(player, name, timeout, ipAddress);
         MyGame<MyState, MyAction, State.Turn> game = new GameImpl(4);
         this.alphaBetaSearch = new AlphaBetaSearch(game, DEPTH, timeout);
+        System.out.println(this);
     }
 
     @Override

@@ -1,12 +1,10 @@
 package it.unibo.ai.didattica.competition.tablut.maren.logic;
 
 import aima.core.search.framework.Metrics;
-import it.unibo.ai.didattica.competition.tablut.domain.Action;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyAction;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyGame;
 import it.unibo.ai.didattica.competition.tablut.maren.game.MyState;
-
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -14,7 +12,7 @@ public class AlphaBetaSearch implements Callable<MyAction> {
 
     public final static String METRICS_NODES_EXPANDED = "nodesExpanded";
 
-    MyGame<MyState, MyAction, State.Turn> game;
+    private final MyGame<MyState, MyAction, State.Turn> game;
     private Metrics metrics = new Metrics();
     private final int depth;
     private final Random rand = new Random();
@@ -25,7 +23,6 @@ public class AlphaBetaSearch implements Callable<MyAction> {
     private MyState currState;
     private MyAction publicResult;
 
-
     public AlphaBetaSearch(MyGame<MyState, MyAction, State.Turn> game, int depth, int timeout) {
         this.game = game;
         this.depth = depth;
@@ -33,35 +30,25 @@ public class AlphaBetaSearch implements Callable<MyAction> {
     }
 
     public MyAction makeDecision(MyState state) {
-
-
         this.currState = state;
-        Future<MyAction> timerResult = timer.submit(this);
+        Future<MyAction> timerActivity = timer.submit(this);
 
         this.bestActions.clear();
         this.publicResult = null;
 
         try {
-            this.publicResult = timerResult.get(this.timeout, TimeUnit.SECONDS);
-            System.out.println("Selected: {" + this.publicResult.toString() + "}");
+            this.publicResult = timerActivity.get(this.timeout, TimeUnit.SECONDS);
         } catch (TimeoutException e) {
-
-            boolean cancellato = timerResult.cancel(true);
-            System.out.println("####### time_out scattato #######");
+            timerActivity.cancel(true);
+            System.out.println("Timeout occurred");
 
             if(!this.bestActions.isEmpty())
                 this.publicResult = this.bestActions.get(rand.nextInt(this.bestActions.size()));
 
-
-            System.out.println("WELAAA Selected: {" + this.publicResult.toString() + "}");
-
             return this.publicResult;
-
         }catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return this.publicResult;
     }
 

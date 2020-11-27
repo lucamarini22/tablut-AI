@@ -5,6 +5,15 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
+    private static final int B_BLACK_WON = 200000000;
+    private static final int B_NUM_OF_WHITE = - 50000;
+    private static final int B_NUM_OF_BLACK = 20000;
+    private static final int B_DIST_KING_ESCAPE = 10;
+    private static final int B_WHITE_WON = - 2000000;
+    private static final int B_NUM_OPP_NEXT_KING = - 5000;
+
+
+
     private final MyState myState;
 
     public GameImpl(int depth) {
@@ -65,12 +74,12 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     200000 * myState.getNumOf(State.Pawn.BLACK) +
                     100 * myState.getDistanceFromKingToEscape()
                     - 2000000000 * myState.whiteWon();*/
-            return 2000000000 * myState.blackWon() +
-                    - 500000 * myState.getNumOf(State.Pawn.WHITE) +
-                    200000 * myState.getNumOf(State.Pawn.BLACK) +
-                    100 * myState.getDistanceFromKingToEscape()
-                    - 20000000 * myState.whiteWon()
-                    - 50000 * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
+            return B_BLACK_WON * myState.blackWon() +
+                    B_NUM_OF_WHITE * myState.getNumOf(State.Pawn.WHITE) +
+                    B_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
+                    B_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
+                    B_WHITE_WON * myState.whiteWon() +
+                    B_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
         }
         return 0;
     }

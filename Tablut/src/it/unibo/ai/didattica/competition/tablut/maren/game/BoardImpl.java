@@ -23,7 +23,7 @@ public class BoardImpl implements Board{
     private static final LinkedList<Integer> ESCAPES_1 = new LinkedList<>(Arrays.asList(0, 8));
     private static final LinkedList<Integer> ESCAPES_2 = new LinkedList<>(Arrays.asList(1, 2, 6, 7));
     private static final int MAX_MANHATTAN_DIST_KING_ESCAPE = 10;
-    private static final int WEIGHT_KING_NOT_PRESENT = 100;
+    private static final int WEIGHT_KING_NOT_PRESENT = 10;
 
     private State.Pawn[][] board;
     private final HashMap<Pair<Integer, Integer>, BoardImpl.SquareType> specialSquares = new HashMap<>();

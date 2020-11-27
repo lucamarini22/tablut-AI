@@ -40,7 +40,7 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public boolean isTerminal(MyState myState) {
-        return myState.getCurrentDepth() == 0;
+        return myState.getCurrentDepth() == 0 || myState.getTurn() == State.Turn.BLACKWIN || myState.getTurn() == State.Turn.WHITEWIN;
     }
 
     @Override

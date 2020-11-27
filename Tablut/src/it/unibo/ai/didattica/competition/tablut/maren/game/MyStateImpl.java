@@ -261,6 +261,9 @@ public class MyStateImpl implements MyState {
             // Captures done by white
             this.standardCapture(rowTo, colTo, State.Pawn.WHITE, State.Pawn.BLACK);
             this.castleOrCampCapture(rowTo, colTo, State.Pawn.BLACK);
+            if (this.board.isKingOnEscape()) {
+                this.setTurn(State.Turn.WHITEWIN);
+            }
         }
     }
 
@@ -332,6 +335,7 @@ public class MyStateImpl implements MyState {
                 && this.board.getSquareType(rowTo, colTo + 2).equals(BoardImpl.SquareType.CAMP) ) {
             if ( !(this.board.getSquareType(rowTo, colTo + 1).equals(BoardImpl.SquareType.CAMP)) ) {
                 this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // Left camp capture
@@ -339,6 +343,7 @@ public class MyStateImpl implements MyState {
                 && this.board.getSquareType(rowTo, colTo - 2).equals(BoardImpl.SquareType.CAMP) ) {
             if ( !(this.board.getSquareType(rowTo, colTo - 1).equals(BoardImpl.SquareType.CAMP)) ) {
                 this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // Down camp capture
@@ -346,6 +351,7 @@ public class MyStateImpl implements MyState {
                 && this.board.getSquareType(rowTo + 2, colTo).equals(BoardImpl.SquareType.CAMP) ) {
             if ( !(this.board.getSquareType(rowTo + 1, colTo).equals(BoardImpl.SquareType.CAMP)) ) {
                 this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // Up camp capture
@@ -353,6 +359,7 @@ public class MyStateImpl implements MyState {
                 && this.board.getSquareType(rowTo - 2, colTo).equals(BoardImpl.SquareType.CAMP) ) {
             if ( !(this.board.getSquareType(rowTo - 1, colTo).equals(BoardImpl.SquareType.CAMP)) ) {
                 this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
     }
@@ -365,6 +372,7 @@ public class MyStateImpl implements MyState {
             if ( !(this.board.getSquareType(rowTo - 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE))
                     && !(this.board.getSquareType(rowTo + 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
                 this.board.setCell(rowTo, colTo + 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // B K <- B capture with king not inside or adjacent to the castle
@@ -374,6 +382,7 @@ public class MyStateImpl implements MyState {
             if ( !(this.board.getSquareType(rowTo - 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
                     && !(this.board.getSquareType(rowTo + 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE)) ) {
                 this.board.setCell(rowTo, colTo - 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // B
@@ -387,6 +396,7 @@ public class MyStateImpl implements MyState {
             if ( !(this.board.getSquareType(rowTo + 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
                     && !(this.board.getSquareType(rowTo + 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
                 this.board.setCell(rowTo + 1, colTo, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // B
@@ -400,6 +410,7 @@ public class MyStateImpl implements MyState {
             if ( !(this.board.getSquareType(rowTo - 1, colTo - 1).equals(BoardImpl.SquareType.CASTLE))
                     && !(this.board.getSquareType(rowTo - 1, colTo + 1).equals(BoardImpl.SquareType.CASTLE)) ) {
                 this.board.setCell(rowTo - 1, colTo, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
     }
@@ -411,6 +422,7 @@ public class MyStateImpl implements MyState {
                     && this.board.getCell(KING_X - 1, KING_Y + 1).equals(State.Pawn.BLACK)
                     && this.board.getCell(KING_X - 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
                 this.board.setCell(KING_X - 1, KING_Y, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // King below the castle
@@ -419,6 +431,7 @@ public class MyStateImpl implements MyState {
                     && this.board.getCell(KING_X + 1, KING_Y + 1).equals(State.Pawn.BLACK)
                     && this.board.getCell(KING_X + 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
                 this.board.setCell(KING_X + 1, KING_Y, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // King right to the castle
@@ -427,6 +440,7 @@ public class MyStateImpl implements MyState {
                     && this.board.getCell(KING_X + 1, KING_Y + 1).equals(State.Pawn.BLACK)
                     && this.board.getCell(KING_X - 1, KING_Y + 1).equals(State.Pawn.BLACK) ) {
                 this.board.setCell(KING_X, KING_Y + 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
         // King left to the castle
@@ -435,6 +449,7 @@ public class MyStateImpl implements MyState {
                     && this.board.getCell(KING_X + 1, KING_Y - 1).equals(State.Pawn.BLACK)
                     && this.board.getCell(KING_X - 1, KING_Y - 1).equals(State.Pawn.BLACK) ) {
                 this.board.setCell(KING_X, KING_Y - 1, State.Pawn.EMPTY);
+                this.setTurn(State.Turn.BLACKWIN);
             }
         }
     }
@@ -445,6 +460,7 @@ public class MyStateImpl implements MyState {
                 && this.board.getCell(KING_X, KING_Y + 1).equals(State.Pawn.BLACK)
                 && this.board.getCell(KING_X, KING_Y - 1).equals(State.Pawn.BLACK) ) {
             this.board.setCell(KING_X, KING_Y, State.Pawn.EMPTY);
+            this.setTurn(State.Turn.BLACKWIN);
         }
     }
 

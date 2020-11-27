@@ -10,12 +10,12 @@ import java.net.UnknownHostException;
 public class MarenTablutAIClient extends TablutClient {
     private static final int DEPTH = 4;
 
-    private final AlphaBetaSearch<MyState, MyAction, State.Turn> alphaBetaSearch;
+    private final AlphaBetaSearch alphaBetaSearch;
 
     public MarenTablutAIClient(String player, String name, int timeout, String ipAddress) throws UnknownHostException, IOException {
         super(player, name, timeout, ipAddress);
         MyGame<MyState, MyAction, State.Turn> game = new GameImpl(4);
-        this.alphaBetaSearch = new AlphaBetaSearch<>(game, DEPTH, timeout);
+        this.alphaBetaSearch = new AlphaBetaSearch(game, DEPTH, timeout);
     }
 
     @Override

@@ -72,6 +72,8 @@ public interface Board {
 
     Integer getNumOfOpponentsAdjacentToTheKingOf(State.Turn playerType);
 
+    int getNumOfOpponentsAndCampsNextToKing();
+
     int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end);
 
 }

@@ -177,6 +177,48 @@ public class BoardImpl implements Board{
 
     }
 
+    @Override
+    public int getNumOfOpponentsAndCampsNextToKing() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        int numOfOpponents = 0;
+        if (kingPos != null) {
+
+            if (this.getCell(kingPos.getFirst() + 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+                numOfOpponents++;
+            }
+            if (this.getCell(kingPos.getFirst() - 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+                numOfOpponents++;
+            }
+            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() + 1).equals(State.Pawn.WHITE)) {
+                numOfOpponents++;
+            }
+            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() - 1).equals(State.Pawn.WHITE)) {
+                numOfOpponents++;
+            }
+            if (this.getSquareType(kingPos.getFirst() + 1, kingPos.getSecond()).equals(SquareType.CAMP)) {
+                numOfOpponents++;
+            }
+            if (this.getSquareType(kingPos.getFirst() - 1, kingPos.getSecond()).equals(SquareType.CAMP)) {
+                numOfOpponents++;
+            }
+            if (this.getSquareType(kingPos.getFirst(), kingPos.getSecond() + 1).equals(SquareType.CAMP)) {
+                numOfOpponents++;
+            }
+            if (this.getSquareType(kingPos.getFirst(), kingPos.getSecond() - 1).equals(SquareType.CAMP)) {
+                numOfOpponents++;
+            }
+
+            if (this.isKingAdjacentToCastle()) {
+                numOfOpponents++;
+            }
+
+            return numOfOpponents;
+        } else {
+            // If the king is not present in the board ( => if the king is dead)
+            return WEIGHT_KING_NOT_PRESENT;
+        }
+    }
+
     public int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end) {
         int dx =  Math.abs(start.getFirst() - end.getFirst());
         int dy = Math.abs(start.getSecond() - end.getSecond());

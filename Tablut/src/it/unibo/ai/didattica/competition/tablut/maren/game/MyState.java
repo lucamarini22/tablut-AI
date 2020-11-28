@@ -38,4 +38,6 @@ public interface MyState {
 
     Integer getNumOfOpponentsNextToTheKingOf(State.Turn player);
 
+    int numOfBlackPawnsAndCampsNextToKing();
+
 }

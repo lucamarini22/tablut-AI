@@ -106,6 +106,11 @@ public class MyStateImpl implements MyState {
     }
 
     @Override
+    public int numOfBlackPawnsAndCampsNextToKing() {
+        return this.board.getNumOfBlackPawnsAndCampsNextToKing();
+    }
+
+    @Override
     public List<MyAction> getPossibleActions() {
         /* get white and black pos from boardImpl.
            Then for each pos get all horizontal (right and left) and vertical (up and down) cells,

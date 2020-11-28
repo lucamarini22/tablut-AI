@@ -10,15 +10,15 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int B_NUM_OF_BLACK = 20000;
     private static final int B_DIST_KING_ESCAPE = 10;
     private static final int B_WHITE_WON = - 2000000;
-    private static final int B_NUM_OPP_NEXT_KING = - 5000;
+    private static final int B_NUM_OPP_NEXT_KING = 5000;
 
 
     private static final int W_WHITE_WON = 200000000;
-    private static final int W_NUM_OF_WHITE = 30000;
-    private static final int W_NUM_OF_BLACK = - 20000;
+    private static final int W_NUM_OF_WHITE = 20000;
+    private static final int W_NUM_OF_BLACK = - 10000;
     private static final int W_DIST_KING_ESCAPE = - 10;
     private static final int W_BLACK_WON = - 2000000;
-    private static final int W_NUM_OPP_NEXT_KING = - 1000;
+    private static final int W_NUM_OPP_NEXT_KING = - 5000;
 
 
 
@@ -57,7 +57,7 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public boolean isTerminal(MyState myState) {
-        return myState.getCurrentDepth() == 0 || myState.getTurn() == State.Turn.BLACKWIN || myState.getTurn() == State.Turn.WHITEWIN;
+        return myState.getCurrentDepth() == 0; //|| myState.getTurn() == State.Turn.BLACKWIN || myState.getTurn() == State.Turn.WHITEWIN;
     }
 
     @Override
@@ -69,7 +69,10 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     W_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
                     W_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
                     W_BLACK_WON * myState.blackWon() +
-                    W_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE);
+                    W_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
+                    // W_NUM_OPP_NEXT_KING * myState.numOfOpponentsAndCampsNextToKing(State.Turn.WHITE);
+
+
             /*return 50000 * myState.whiteWon() +
                     250 * myState.getNumOf(State.Pawn.WHITE) +
                     - 164 * myState.getNumOf(State.Pawn.BLACK)
@@ -83,7 +86,8 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     B_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
                     B_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
                     B_WHITE_WON * myState.whiteWon() +
-                    B_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
+                    B_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
+                    //B_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
         }
         return 0;
     }

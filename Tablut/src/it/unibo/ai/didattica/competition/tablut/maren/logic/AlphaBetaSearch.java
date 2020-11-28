@@ -21,7 +21,7 @@ public class AlphaBetaSearch implements Callable<MyAction> {
     private final ExecutorService timer = Executors.newCachedThreadPool();
 
     private MyState currState;
-    private MyAction publicResult;
+    private MyAction finalResult;
 
     public AlphaBetaSearch(MyGame<MyState, MyAction, State.Turn> game, int depth, int timeout) {
         this.game = game;
@@ -34,25 +34,30 @@ public class AlphaBetaSearch implements Callable<MyAction> {
         Future<MyAction> timerActivity = timer.submit(this);
 
         this.bestActions.clear();
-        this.publicResult = null;
+        this.finalResult = null;
 
         try {
-            this.publicResult = timerActivity.get(this.timeout, TimeUnit.SECONDS);
+            this.finalResult = timerActivity.get(this.timeout, TimeUnit.SECONDS);
         } catch (TimeoutException e) {
             timerActivity.cancel(true);
             System.out.println("Timeout occurred");
 
             if(!this.bestActions.isEmpty())
-                this.publicResult = this.bestActions.get(rand.nextInt(this.bestActions.size()));
+                this.finalResult = this.bestActions.get(rand.nextInt(this.bestActions.size()));
 
-            return this.publicResult;
+            return this.finalResult;
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return this.publicResult;
+        return this.finalResult;
     }
 
     public double maxValue(MyState state, State.Turn player, double alpha, double beta, int depth) {
+        if(Thread.interrupted()){
+            System.out.println(Thread.currentThread() + "Stop in maxValue()");
+            this.interruptThread();
+            return 0;
+        }
         metrics.incrementInt(METRICS_NODES_EXPANDED);
         this.game.setCurrentDepth(state, depth);
         if (game.isTerminal(state)) {
@@ -71,6 +76,11 @@ public class AlphaBetaSearch implements Callable<MyAction> {
     }
 
     public double minValue(MyState state, State.Turn player, double alpha, double beta, int depth) {
+        if(Thread.interrupted()){
+            System.out.println(Thread.currentThread() + "Stop in minValue()");
+            this.interruptThread();
+            return 0;
+        }
         metrics.incrementInt(METRICS_NODES_EXPANDED);
         this.game.setCurrentDepth(state, depth);
         if (game.isTerminal(state)) {
@@ -97,7 +107,7 @@ public class AlphaBetaSearch implements Callable<MyAction> {
         metrics = new Metrics();
         List<MyAction> actions = game.getActions(this.currState);
         Collections.shuffle(actions);
-        this.publicResult = actions.get(0);
+        this.finalResult = actions.get(0);
         this.bestActions.add(actions.get(0));
 
         int depth = this.depth;
@@ -106,6 +116,11 @@ public class AlphaBetaSearch implements Callable<MyAction> {
         for (MyAction action : actions) {
             double value = minValue(game.getResult(this.currState, action), player,
                     Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth - 1);
+            if(Thread.interrupted()){
+                System.out.println(Thread.currentThread() + "Stop in call()");
+                this.interruptThread();
+                return this.bestActions.get(rand.nextInt(this.bestActions.size()));
+            }
             if (value == resultValue) {
                 this.bestActions.add(action);
                 System.out.println("Best moves: " + Arrays.toString(this.bestActions.toArray()));
@@ -119,8 +134,12 @@ public class AlphaBetaSearch implements Callable<MyAction> {
             }
         }
         if(this.bestActions.size() > 0) {
-            this.publicResult = this.bestActions.get(rand.nextInt(this.bestActions.size()));
+            this.finalResult = this.bestActions.get(rand.nextInt(this.bestActions.size()));
         }
-        return this.publicResult;
+        return this.finalResult;
+    }
+
+    private void interruptThread() {
+        Thread.currentThread().interrupt();
     }
 }

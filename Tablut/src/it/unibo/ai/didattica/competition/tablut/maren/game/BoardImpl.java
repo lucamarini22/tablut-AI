@@ -183,16 +183,16 @@ public class BoardImpl implements Board{
         int numOfOpponents = 0;
         if (kingPos != null) {
 
-            if (this.getCell(kingPos.getFirst() + 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+            if (this.getCell(kingPos.getFirst() + 1, kingPos.getSecond()).equals(State.Pawn.BLACK)) {
                 numOfOpponents++;
             }
-            if (this.getCell(kingPos.getFirst() - 1, kingPos.getSecond()).equals(State.Pawn.WHITE)) {
+            if (this.getCell(kingPos.getFirst() - 1, kingPos.getSecond()).equals(State.Pawn.BLACK)) {
                 numOfOpponents++;
             }
-            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() + 1).equals(State.Pawn.WHITE)) {
+            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() + 1).equals(State.Pawn.BLACK)) {
                 numOfOpponents++;
             }
-            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() - 1).equals(State.Pawn.WHITE)) {
+            if (this.getCell(kingPos.getFirst(), kingPos.getSecond() - 1).equals(State.Pawn.BLACK)) {
                 numOfOpponents++;
             }
             if (this.getSquareType(kingPos.getFirst() + 1, kingPos.getSecond()).equals(SquareType.CAMP)) {

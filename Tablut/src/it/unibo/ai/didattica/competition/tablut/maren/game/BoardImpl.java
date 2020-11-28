@@ -178,7 +178,7 @@ public class BoardImpl implements Board{
     }
 
     @Override
-    public int getNumOfOpponentsAndCampsNextToKing() {
+    public int getNumOfBlackPawnsAndCampsNextToKing() {
         Pair<Integer, Integer> kingPos = this.getKingPosition();
         int numOfOpponents = 0;
         if (kingPos != null) {

@@ -40,4 +40,6 @@ public interface MyState {
 
     int numOfBlackPawnsAndCampsNextToKing();
 
+    int numOfFreePathsFromKingToEscape();
+
 }

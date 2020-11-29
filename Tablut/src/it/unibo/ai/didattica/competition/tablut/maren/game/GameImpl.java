@@ -11,6 +11,8 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int B_DIST_KING_ESCAPE = 10;
     private static final int B_WHITE_WON = - 2000000;
     private static final int B_NUM_OPP_NEXT_KING = 5000;
+    private static final int B_FREE_PATHS_FROM_KING_TO_ESCAPE = -10000;
+
 
 
     private static final int W_WHITE_WON = 200000000;
@@ -19,13 +21,17 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int W_DIST_KING_ESCAPE = - 10;
     private static final int W_BLACK_WON = - 2000000;
     private static final int W_NUM_OPP_NEXT_KING = - 5000;
+    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 15000;
+
 
 
 
     private final MyState myState;
+    //private final String player;
 
-    public GameImpl(int depth) {
+    public GameImpl(int depth) { // String player) {
         this.myState = new MyStateImpl(depth);
+        //this.player = player.toLowerCase();
     }
 
     @Override
@@ -62,15 +68,29 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
-        // if turn == BLACKWIN or WHITEWIN ?
+        /*if (turn.equals(State.Turn.WHITEWIN)) {
+            System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            if (this.player.equals("white")) {
+                return W_WHITE_WON;
+            } else if (this.player.equals("black")) {
+                return B_WHITE_WON;
+            }
+        } else if (turn.equals(State.Turn.BLACKWIN)) {
+            System.out.println("IIIIIIIIIIIIIIIIIIIIIIIIIII");
+            if (this.player.equals("white")) {
+                return W_BLACK_WON;
+            } else if (this.player.equals("black")) {
+                return B_BLACK_WON;
+            }*/
         if (turn.equals(State.Turn.WHITE)) {
             return W_WHITE_WON * myState.whiteWon() +
                     W_NUM_OF_WHITE * myState.getNumOf(State.Pawn.WHITE) +
                     W_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
                     W_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
                     W_BLACK_WON * myState.blackWon() +
-                    W_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
-                    // W_NUM_OPP_NEXT_KING * myState.numOfOpponentsAndCampsNextToKing(State.Turn.WHITE);
+                    //W_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
+                    W_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE) +
+                    W_FREE_PATHS_FROM_KING_TO_ESCAPE * myState.numOfFreePathsFromKingToEscape();
 
 
             /*return 50000 * myState.whiteWon() +
@@ -86,8 +106,9 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
                     B_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
                     B_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
                     B_WHITE_WON * myState.whiteWon() +
-                    B_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
+                    B_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing() +
                     //B_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.BLACK);
+                    B_FREE_PATHS_FROM_KING_TO_ESCAPE * myState.numOfFreePathsFromKingToEscape();
         }
         return 0;
     }

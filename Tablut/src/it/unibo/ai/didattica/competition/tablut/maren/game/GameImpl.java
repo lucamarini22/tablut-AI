@@ -12,12 +12,18 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int B_WHITE_WON = - 2000000;
     private static final int B_NUM_OPP_NEXT_KING = 5000;
     private static final int B_FREE_PATHS_FROM_KING_TO_ESCAPE = -10000;
-
-
-
+/*
+    private static final int W_WHITE_WON = 7500;
+    private static final int W_NUM_OF_WHITE = 250;
+    private static final int W_NUM_OF_BLACK = - 164;
+    private static final int W_DIST_KING_ESCAPE = - 42;
+    private static final int W_BLACK_WON = - 5000;
+    private static final int W_NUM_OPP_NEXT_KING = - 147;
+    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 195;
+*/
     private static final int W_WHITE_WON = 200000000;
-    private static final int W_NUM_OF_WHITE = 20000;
-    private static final int W_NUM_OF_BLACK = - 10000;
+    private static final int W_NUM_OF_WHITE = 50000;
+    private static final int W_NUM_OF_BLACK = - 30000;
     private static final int W_DIST_KING_ESCAPE = - 10;
     private static final int W_BLACK_WON = - 2000000;
     private static final int W_NUM_OPP_NEXT_KING = - 5000;

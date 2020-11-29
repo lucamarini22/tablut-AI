@@ -21,7 +21,7 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int W_DIST_KING_ESCAPE = - 10;
     private static final int W_BLACK_WON = - 2000000;
     private static final int W_NUM_OPP_NEXT_KING = - 5000;
-    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 15000;
+    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 10000;
 
 
 

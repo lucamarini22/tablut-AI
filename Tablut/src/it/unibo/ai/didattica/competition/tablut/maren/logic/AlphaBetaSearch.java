@@ -37,7 +37,7 @@ public class AlphaBetaSearch implements Callable<MyAction> {
         this.finalResult = null;
 
         try {
-            this.finalResult = timerActivity.get(this.timeout, TimeUnit.SECONDS);
+            this.finalResult = timerActivity.get(this.timeout - 2, TimeUnit.SECONDS);
         } catch (TimeoutException e) {
             timerActivity.cancel(true);
             System.out.println("Timeout occurred");

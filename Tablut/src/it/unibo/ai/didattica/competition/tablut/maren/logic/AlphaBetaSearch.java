@@ -140,6 +140,6 @@ public class AlphaBetaSearch implements Callable<MyAction> {
     }
 
     private void interruptThread() {
-        Thread.currentThread().interrupt();
+        Thread.currentThread().stop();
     }
 }

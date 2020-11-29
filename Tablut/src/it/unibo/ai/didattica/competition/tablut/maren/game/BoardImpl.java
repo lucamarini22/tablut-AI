@@ -3,7 +3,10 @@ package it.unibo.ai.didattica.competition.tablut.maren.game;
 import aima.core.util.datastructure.Pair;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class BoardImpl implements Board{
 
@@ -223,6 +226,34 @@ public class BoardImpl implements Board{
         int dx =  Math.abs(start.getFirst() - end.getFirst());
         int dy = Math.abs(start.getSecond() - end.getSecond());
         return dx + dy;
+    }
+
+    @Override
+    public int freePathsFromKingToEscape() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        if (kingPos != null) {
+            List<Pair<Integer, Integer>> possibleEscapes = this.getHorAndVertEscapesOfKing();
+            int numOfFreePaths = 0;
+            if (possibleEscapes.isEmpty()) {
+                return numOfFreePaths;
+            }
+            Optional<Pair<Integer, Integer>> obstacles;
+            Supplier<Stream<Pair<Integer, Integer>>> blackAndWhitePos, blackAndWhitePosAndCamps;
+
+            blackAndWhitePos = () -> Stream.concat(this.blackPos.stream(), this.whitePos.stream());
+            blackAndWhitePosAndCamps = () -> Stream.concat(blackAndWhitePos.get(), this.getCampPositions().stream());
+
+            for (Pair<Integer, Integer> freeEscape : possibleEscapes) {
+                obstacles = blackAndWhitePosAndCamps.get().filter(possibleObstacle -> this.isInPath(possibleObstacle, kingPos, freeEscape)).findAny();
+
+                if (obstacles.isEmpty()) {
+                    numOfFreePaths++;
+                }
+            }
+            return numOfFreePaths;
+        } else {
+            return 0;
+        }
     }
 
     public void initializeBoard() {
@@ -462,5 +493,49 @@ public class BoardImpl implements Board{
         IntStream.range(0, WIDTH).forEach((num) -> {
             this.intLetterMap.put(num, letters.get(num));
         });
+    }
+
+    private List<Pair<Integer, Integer>> getHorAndVertEscapesOfKing() {
+        Pair<Integer, Integer> kingPos = this.getKingPosition();
+        if (kingPos != null) {
+            return this.specialSquares.entrySet()
+                    .stream()
+                    .filter(e -> e.getValue().equals(SquareType.ESCAPE))
+                    .filter(e -> e.getKey().getFirst().equals(kingPos.getFirst())
+                            || e.getKey().getSecond().equals(kingPos.getSecond()))
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.toList());
+        } else {
+            return new ArrayList<>();
+        }
+    }
+
+    private List<Pair<Integer, Integer>> getCampPositions() {
+        return this.specialSquares.entrySet()
+                .stream()
+                .filter(e -> e.getValue().equals(SquareType.CAMP))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+
+    private boolean isInPath(Pair<Integer, Integer> possibleObstacle, Pair<Integer, Integer> start, Pair<Integer, Integer> end) {
+        if (possibleObstacle.equals(end)) {
+            return true;
+        } else if(possibleObstacle.equals(start)) {
+            return false;
+        }
+        // If start, end and obstacle are in the same row
+        if (possibleObstacle.getFirst().equals(start.getFirst()) && possibleObstacle.getFirst().equals(end.getFirst())) {
+            int min = Math.min(start.getFirst(), end.getFirst());
+            int max = Math.max(start.getFirst(), end.getFirst());
+            return possibleObstacle.getFirst() > min && possibleObstacle.getFirst() < max;
+        }
+        // If start, end and obstacle are in the same column
+        if (possibleObstacle.getSecond().equals(start.getSecond()) && possibleObstacle.getSecond().equals(end.getSecond())) {
+            int min = Math.min(start.getSecond(), end.getSecond());
+            int max = Math.max(start.getSecond(), end.getSecond());
+            return possibleObstacle.getSecond() > min && possibleObstacle.getSecond() < max;
+        }
+        return false;
     }
 }

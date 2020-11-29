@@ -76,4 +76,5 @@ public interface Board {
 
     int manhattanDistance(Pair<Integer, Integer> start, Pair<Integer, Integer> end);
 
+    int freePathsFromKingToEscape();
 }

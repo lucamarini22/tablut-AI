@@ -14,10 +14,9 @@ java -jar Tablut-MarenAI.jar black 60 <server-ip>
 `
 
 
+### What is Tablut?
 
 MarenTablutAI is an artificial intelligence written in Java that plays Tablut, a variant of the classic Viking boardgame Hnefatafl. 
-
-### What is Tablut?
 
 Games's rules [here](https://en.wikipedia.org/wiki/Tafl_games)
 
@@ -42,14 +41,14 @@ java -jar Tablut-MarenAI.jar <black|white> <timeout-per-move-in-seconds> <server
 
 ### How to run the server
 
-<> First install Gradle
+[comment]: <> (First install Gradle)
 
-<> Gradle Installation [here](https://gradle.org/install/)
+[comment]: <> (Gradle Installation [here](https://gradle.org/install/)
 
-<> Clone this project:
-<> ```
+[comment]: <> (Clone this project:)
+[comment]: <> ( ```
 <> git clone https://github.com/lucamarini22/TablutAI
-<> ```
+<> ```)
 
 Go into the project folder:
 ```

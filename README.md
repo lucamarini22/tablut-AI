@@ -43,7 +43,7 @@ java -jar Tablut-MarenAI.jar <black|white> <timeout-per-move-in-seconds> <server
 
 [comment]: <> (First install Gradle)
 
-[comment]: <> (Gradle Installation [here](https://gradle.org/install/)
+[comment]: <> (Gradle Installation [here](https://gradle.org/install/))
 
 [comment]: <> (Clone this project:)
 [comment]: <> ( ```

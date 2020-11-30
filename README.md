@@ -1,5 +1,20 @@
 # MarenTablutAI
 
+
+### Run it from the VM:
+- go into the Desktop folder
+- run the player:
+	- white player:
+	`
+java -jar Tablut-MarenAI.jar white 60 <server-ip>
+`
+	- black player:
+	`
+java -jar Tablut-MarenAI.jar black 60 <server-ip>
+`
+
+
+
 MarenTablutAI is an artificial intelligence written in Java that plays Tablut, a variant of the classic Viking boardgame Hnefatafl. 
 
 ### What is Tablut?
@@ -27,14 +42,14 @@ java -jar Tablut-MarenAI.jar <black|white> <timeout-per-move-in-seconds> <server
 
 ### How to run the server
 
-First install Gradle
+<> First install Gradle
 
-Gradle Installation [here](https://gradle.org/install/)
+<> Gradle Installation [here](https://gradle.org/install/)
 
-Clone this project:
-```
-git clone https://github.com/lucamarini22/TablutAI
-```
+<> Clone this project:
+<> ```
+<> git clone https://github.com/lucamarini22/TablutAI
+<> ```
 
 Go into the project folder:
 ```

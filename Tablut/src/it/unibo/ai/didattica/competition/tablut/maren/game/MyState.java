@@ -1,7 +1,6 @@
 package it.unibo.ai.didattica.competition.tablut.maren.game;
 
 import it.unibo.ai.didattica.competition.tablut.domain.State;
-
 import java.util.List;
 
 public interface MyState {

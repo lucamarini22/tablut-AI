@@ -11,33 +11,20 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
     private static final int B_DIST_KING_ESCAPE = 10;
     private static final int B_WHITE_WON = - 2000000;
     private static final int B_NUM_OPP_NEXT_KING = 5000;
-    private static final int B_FREE_PATHS_FROM_KING_TO_ESCAPE = -10000;
-/*
-    private static final int W_WHITE_WON = 7500;
-    private static final int W_NUM_OF_WHITE = 250;
-    private static final int W_NUM_OF_BLACK = - 164;
-    private static final int W_DIST_KING_ESCAPE = - 42;
-    private static final int W_BLACK_WON = - 5000;
-    private static final int W_NUM_OPP_NEXT_KING = - 147;
-    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 195;
-*/
+    private static final int B_FREE_PATHS_FROM_KING_TO_ESCAPE = - 10000;
+
     private static final int W_WHITE_WON = 200000000;
-    private static final int W_NUM_OF_WHITE = 50000;
-    private static final int W_NUM_OF_BLACK = - 30000;
-    private static final int W_DIST_KING_ESCAPE = - 10;
+    private static final int W_NUM_OF_WHITE = 70000;
+    private static final int W_NUM_OF_BLACK = - 50000;
+    private static final int W_DIST_KING_ESCAPE = - 1000;
     private static final int W_BLACK_WON = - 2000000;
-    private static final int W_NUM_OPP_NEXT_KING = - 5000;
-    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 10000;
-
-
-
+    private static final int W_NUM_OPP_NEXT_KING = - 35000;
+    private static final int W_FREE_PATHS_FROM_KING_TO_ESCAPE = 60000;
 
     private final MyState myState;
-    //private final String player;
 
-    public GameImpl(int depth) { // String player) {
+    public GameImpl(int depth) {
         this.myState = new MyStateImpl(depth);
-        //this.player = player.toLowerCase();
     }
 
     @Override
@@ -74,37 +61,15 @@ public class GameImpl implements MyGame<MyState, MyAction, State.Turn> {
 
     @Override
     public double getUtility(MyState myState, State.Turn turn) {
-        /*if (turn.equals(State.Turn.WHITEWIN)) {
-            System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOO");
-            if (this.player.equals("white")) {
-                return W_WHITE_WON;
-            } else if (this.player.equals("black")) {
-                return B_WHITE_WON;
-            }
-        } else if (turn.equals(State.Turn.BLACKWIN)) {
-            System.out.println("IIIIIIIIIIIIIIIIIIIIIIIIIII");
-            if (this.player.equals("white")) {
-                return W_BLACK_WON;
-            } else if (this.player.equals("black")) {
-                return B_BLACK_WON;
-            }*/
         if (turn.equals(State.Turn.WHITE)) {
             return W_WHITE_WON * myState.whiteWon() +
                     W_NUM_OF_WHITE * myState.getNumOf(State.Pawn.WHITE) +
                     W_NUM_OF_BLACK * myState.getNumOf(State.Pawn.BLACK) +
                     W_DIST_KING_ESCAPE * myState.getDistanceFromKingToEscape() +
-                    W_BLACK_WON * myState.blackWon() +
+                    // W_BLACK_WON * myState.blackWon() +
                     //W_NUM_OPP_NEXT_KING * myState.numOfBlackPawnsAndCampsNextToKing();
                     W_NUM_OPP_NEXT_KING * myState.getNumOfOpponentsNextToTheKingOf(State.Turn.WHITE) +
                     W_FREE_PATHS_FROM_KING_TO_ESCAPE * myState.numOfFreePathsFromKingToEscape();
-
-
-            /*return 50000 * myState.whiteWon() +
-                    250 * myState.getNumOf(State.Pawn.WHITE) +
-                    - 164 * myState.getNumOf(State.Pawn.BLACK)
-                    - 42 * myState.getDistanceFromKingToEscape()
-                    - 5000 * myState.blackWon()
-                    - 147 * myState.getNumOfOpponentsNextToTheKing(State.Turn.WHITE);*/
 
         } else if (turn.equals(State.Turn.BLACK)) {
             return B_BLACK_WON * myState.blackWon() +
